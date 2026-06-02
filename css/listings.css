@@ -1,0 +1,45 @@
+/* LISTINGS LAYOUT */
+#listings-layout {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* FILTER SIDEBAR */
+#filters {
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+/* FILTER GROUPS */
+.filter-group {
+    margin-bottom: 15px;
+}
+
+/* PROPERTY GRID */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* PROPERTY CARD */
+.property-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.property-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
