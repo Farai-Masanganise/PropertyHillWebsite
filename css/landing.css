@@ -146,8 +146,9 @@
 
 /* HOVER EFFECT */
 #services .cards article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    border-color: #B3954D;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* TEXT */
