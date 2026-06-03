@@ -29,12 +29,56 @@ nav {
     gap: 20px;
 }
 
-/* LOGO */
-.logo a {
+/* LOGO WRAPPER */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* CLICKABLE AREA */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+/* LOGO IMAGE */
+.logo-img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* LOGO TEXT */
+.logo-text {
     font-size: 20px;
     font-weight: 700;
-    text-decoration: none;
-    color: #222;
+    color: #111;
+    letter-spacing: 0.8px;
+    font-family: inherit;
+    line-height: 1;
+}
+
+/* GOLD ACCENT PART */
+.logo-text span {
+    color: #B3954D;
+}
+
+/* HOVER EFFECT */
+.logo-link:hover .logo-text {
+    color: #000;
+}
+
+.logo-link:hover .logo-text span {
+    color: #B3954D;
 }
 
 /* NAV LINKS */
