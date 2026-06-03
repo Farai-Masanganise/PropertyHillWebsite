@@ -57,7 +57,7 @@ section {
 ========================= */
 
 #property-gallery {
-    margin-top: 60;
+    margin-top: 60px;
     grid-column: 1 / 2;
 }
 
