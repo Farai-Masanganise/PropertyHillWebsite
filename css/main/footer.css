@@ -29,7 +29,7 @@ footer h3::after {
     display: block;
     width: 40px;
     height: 2px;
-    background: #4CAF50;
+    background: #B3954D;
     margin-top: 8px;
 }
 
@@ -50,7 +50,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #4CAF50;
+    color: #B3954D;
     padding-left: 5px;
 }
 
