@@ -390,18 +390,18 @@
 .contact-form textarea {
 	width: 100%;
 	padding: 12px 14px;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111111;
 	border-radius: 8px;
 	font-size: 1rem;
 	outline: none;
 	transition: all 0.25s ease;
-	background: #FFFFFF;
+	background: #818181;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
 	border-color: #B3954D;
-	background: #FFFFFF;
+	background: #818181;
 	box-shadow: 0 0 0 3px rgba(179,149,77,0.12);
 }
 
