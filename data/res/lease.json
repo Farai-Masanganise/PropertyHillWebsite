@@ -18,8 +18,8 @@
       "Borehole Water"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg"
+      "../data/images/res/lease/property1.jpg",
+      "../data/images/res/lease/property2.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -47,9 +47,9 @@
       "Parking Space"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/res/lease/property1.jpg",
+      "../data/images/res/lease/property2.jpg",
+      "../data/images/res/lease/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -77,8 +77,8 @@
       "Low Maintenance"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg"
+      "../data/images/res/lease/property1.jpg",
+      "../data/images/res/lease/property2.jpg"
     ],
     "agent": {
       "name": "Agent Name",

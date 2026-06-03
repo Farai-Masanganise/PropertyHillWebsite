@@ -18,9 +18,9 @@
       "High Storage Capacity"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/ind/lease/property1.jpg",
+      "../data/images/ind/lease/property2.jpg",
+      "../data/images/ind/lease/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -48,10 +48,10 @@
       "Transport Access"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg",
-      "assets/images/property4.jpg"
+      "../data/images/ind/lease/property1.jpg",
+      "../data/images/ind/lease/property2.jpg",
+      "../data/images/ind/lease/property3.jpg",
+      "../data/images/ind/lease/property4.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -78,9 +78,9 @@
       "Secure Facility"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/ind/lease/property1.jpg",
+      "../data/images/ind/lease/property2.jpg",
+      "../data/images/ind/lease/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",

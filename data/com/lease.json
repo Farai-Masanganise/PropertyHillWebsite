@@ -47,9 +47,9 @@
       "Fast Internet Access Area"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/com/lease/property1.jpg",
+      "../data/images/com/lease/property2.jpg",
+      "../data/images/com/lease/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -77,10 +77,10 @@
       "24/7 Security"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg",
-      "assets/images/property4.jpg"
+      "../data/images/com/lease/property1.jpg",
+      "../data/images/com/lease/property2.jpg",
+      "../data/images/com/lease/property3.jpg",
+      "../data/images/com/lease/property4.jpg"
     ],
     "agent": {
       "name": "Agent Name",

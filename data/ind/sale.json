@@ -18,9 +18,9 @@
       "Secure Perimeter"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/ind/sale/property1.jpg",
+      "../data/images/ind/sale/property2.jpg",
+      "../data/images/ind/sale/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -48,10 +48,10 @@
       "Easy Transport Access"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg",
-      "assets/images/property4.jpg"
+      "../data/images/ind/sale/property1.jpg",
+      "../data/images/ind/sale/property2.jpg",
+      "../data/images/ind/sale/property3.jpg",
+      "../data/images/ind/sale/property4.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -79,9 +79,9 @@
       "Prime Industrial Location"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/ind/sale/property1.jpg",
+      "../data/images/ind/sale/property2.jpg",
+      "../data/images/ind/sale/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",

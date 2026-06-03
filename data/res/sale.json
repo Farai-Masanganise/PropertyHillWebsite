@@ -18,9 +18,9 @@
       "Secure Neighborhood"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "../data/images/res/sale/property1.jpg",
+      "../data/images/res/sale/property2.jpg",
+      "../data/images/res/sale/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -48,10 +48,10 @@
       "Backup Power Ready"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg",
-      "assets/images/property3.jpg",
-      "assets/images/property4.jpg"
+      "../data/images/res/sale//property1.jpg",
+      "../data/images/res/sale/property2.jpg",
+      "../data/images/res/sale/property3.jpg",
+      "../data/images/res/sale/property4.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -78,8 +78,8 @@
       "Spacious Yard"
     ],
     "images": [
-      "assets/images/property1.jpg",
-      "assets/images/property2.jpg"
+      "../data/images/res/sale/property1.jpg",
+      "../data/images/res/sale/property2.jpg"
     ],
     "agent": {
       "name": "Agent Name",
