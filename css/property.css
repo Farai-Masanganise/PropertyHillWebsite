@@ -37,7 +37,7 @@ h2 {
 
 main {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 60;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
