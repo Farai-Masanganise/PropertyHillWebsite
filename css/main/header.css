@@ -25,7 +25,7 @@ nav {
     align-items: center;
     padding: 15px 5%;
     background: white;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #000;
     gap: 20px;
 }
 
@@ -98,7 +98,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #0077ff;
+    color: #B3954D;
 }
 
 /* SEARCH BAR */
@@ -118,7 +118,7 @@ nav ul li a:hover {
 }
 
 .search-bar input[type="search"]:focus {
-    border-color: #0077ff;
+    border-color: #B3954D;
     width: 220px;
 }
 
