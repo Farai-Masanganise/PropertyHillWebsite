@@ -7,293 +7,349 @@
         
         
         <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="css/main/header.css">
+        <link rel="stylesheet" href="../css/main/header.css">
         <link rel="stylesheet" href="../css/listings.css">
-        <link rel="stylesheet" href="css/main/footer.css">
+        <link rel="stylesheet" href="../css/main/footer.css">
     </head>
 
-<body>
-
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <h2>Company Name</h2>
-            </div>
-
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listings.html">Listings</a></li>
-                <li><a href="valuation.html">Valuation</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-        <!-- Page Hero -->
-        <section id="page-hero">
-
-            <h1>Property Listings</h1>
-
-            <p>
-                Browse commercial, residential and industrial
-                properties available for sale or lease.
-            </p>
-
-        </section>
-
-        <!-- Main Content -->
-        <section id="listings-layout">
-
-            <!-- Sidebar -->
-            <aside id="filters">
-
-                <h2>Filter Properties</h2>
-
-                <!-- Search -->
-                <div class="filter-group">
-
-                    <label for="search">
-                        Search
-                    </label>
-
-                    <input
-                        type="text"
-                        id="search"
-                        placeholder="Location, title..."
-                    >
-
-                </div>
-
-                <!-- Transaction -->
-                <div class="filter-group">
-
-                    <h3>Transaction</h3>
-
-                    <label>
-                        <input type="checkbox" value="sales">
-                        Sales
-                    </label>
-
-                    <label>
-                        <input type="checkbox" value="leasing">
-                        Leasing
-                    </label>
-
-                </div>
-
-                <!-- Property Type -->
-                <div class="filter-group">
-
-                    <h3>Property Type</h3>
-
-                    <label>
-                        <input type="checkbox" value="commercial">
-                        Commercial
-                    </label>
-
-                    <label>
-                        <input type="checkbox" value="residential">
-                        Residential
-                    </label>
-
-                    <label>
-                        <input type="checkbox" value="industrial">
-                        Industrial
-                    </label>
-
-                </div>
-
-                <!-- Development -->
-                <div class="filter-group">
-
-                    <h3>Category</h3>
-
-                    <label>
-                        <input type="checkbox" value="land">
-                        Land / Stands
-                    </label>
-
-                    <label>
-                        <input type="checkbox" value="built">
-                        Built / Developed
-                    </label>
-
-                </div>
-
-                <!-- Price -->
-                <div class="filter-group">
-
-                    <h3>Price Range</h3>
-
-                    <input
-                        type="number"
-                        placeholder="Minimum"
-                    >
-
-                    <input
-                        type="number"
-                        placeholder="Maximum"
-                    >
-
-                </div>
-
-                <button>
-                    Apply Filters
-                </button>
-
-            </aside>
-
-            <!-- Listings -->
-            <section id="properties">
-
-                <h2>Available Properties</h2>
-
-                <div class="property-grid">
-
-                    <!-- Card 1 -->
-                    <article class="property-card">
-
-                        <img
-                            src="assets/images/property1.jpg"
-                            alt="Property"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>
-                                Commercial Stand
-                            </h3>
-
-                            <p>
-                                Harare CBD
-                            </p>
-
-                            <p>
-                                $85,000
-                            </p>
-
-                            <p>
-                                Commercial • Land
-                            </p>
-
-                            <a href="property.html?id=1">
-                                View Details
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                    <!-- Card 2 -->
-                    <article class="property-card">
-
-                        <img
-                            src="assets/images/property2.jpg"
-                            alt="Property"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>
-                                Residential House
-                            </h3>
-
-                            <p>
-                                Borrowdale
-                            </p>
-
-                            <p>
-                                $220,000
-                            </p>
-
-                            <p>
-                                Residential • Built
-                            </p>
-
-                            <a href="property.html?id=2">
-                                View Details
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                    <!-- Card 3 -->
-                    <article class="property-card">
-
-                        <img
-                            src="assets/images/property3.jpg"
-                            alt="Property"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>
-                                Industrial Warehouse
-                            </h3>
-
-                            <p>
-                                Msasa
-                            </p>
-
-                            <p>
-                                $450,000
-                            </p>
-
-                            <p>
-                                Industrial • Built
-                            </p>
-
-                            <a href="property.html?id=3">
-                                View Details
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
+    <body>
+
+		<!-- Header -->
+		<header>
+			<nav>
+				<div class="logo">
+					<a href="#" class="logo-link">
+						<div class="logo-img">
+							<img src="assets/logo.jpeg">
+						</div>
+
+						<div class="logo-text">
+							Propertyhill <span>Realty</span>
+						</div>
+					</a>
+				</div>
+
+				<ul class="main-nav">
+					<li><a href="#">Home</a></li>
+
+					<li class="dropdown">
+						<a href="pages/listings.html?type=sales">Sales</a>
+					</li>
+
+					<li class="dropdown">
+						<a href="pages/listings.html?type=leasing">Leasing</a>
+					</li>
+
+					<li class="dropdown">
+						<a href="/valuation.html">Valuation</a>
+					</li>	
+
+					<li>
+						<a href="#contact-cta">Contact Us</a>
+					</li>
+				</ul>
+				
+				<form class="search-bar" role="search">
+				  <input type="search" placeholder="Search site..." />
+				  <button type="submit">Search</button>
+				</form>
+			</nav>
+		</header>
+
+        <main>
+
+            <!-- Page Hero -->
+            <section id="page-hero">
+
+                <h1>Property Listings</h1>
+
+                <p>
+                    Browse commercial, residential and industrial
+                    properties available for sale or lease.
+                </p>
 
             </section>
 
-        </section>
+            <!-- Main Content -->
+            <section id="listings-layout">
 
-    </main>
+                <!-- Sidebar -->
+                <aside id="filters">
 
-    <!-- Footer -->
-    <footer>
+                    <h2>Filter Properties</h2>
 
-        <div>
-            <h3>Company Name</h3>
+                    <!-- Search -->
+                    <div class="filter-group">
 
-            <p>
-                Property Sales, Leasing &
-                Valuation Services.
-            </p>
-        </div>
+                        <label for="search">
+                            Search
+                        </label>
 
-        <div>
-            <h3>Quick Links</h3>
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Location, title..."
+                        >
 
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="listings.html">Listings</a></li>
-                <li><a href="valuation.html">Valuation</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+                    </div>
 
-        <div>
-            <h3>Contact</h3>
+                    <!-- Transaction -->
+                    <div class="filter-group">
 
-            <p>Phone Number</p>
-            <p>Email Address</p>
-            <p>Office Address</p>
-        </div>
+                        <h3>Transaction</h3>
 
-    </footer>
+                        <label>
+                            <input type="checkbox" value="sales">
+                            Sales
+                        </label>
 
-</body>
+                        <label>
+                            <input type="checkbox" value="leasing">
+                            Leasing
+                        </label>
+
+                    </div>
+
+                    <!-- Property Type -->
+                    <div class="filter-group">
+
+                        <h3>Property Type</h3>
+
+                        <label>
+                            <input type="checkbox" value="commercial">
+                            Commercial
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="residential">
+                            Residential
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="industrial">
+                            Industrial
+                        </label>
+
+                    </div>
+
+                    <!-- Development -->
+                    <div class="filter-group">
+
+                        <h3>Category</h3>
+
+                        <label>
+                            <input type="checkbox" value="land">
+                            Land / Stands
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="built">
+                            Built / Developed
+                        </label>
+
+                    </div>
+
+                    <!-- Price -->
+                    <div class="filter-group">
+
+                        <h3>Price Range</h3>
+
+                        <input
+                            type="number"
+                            placeholder="Minimum"
+                        >
+
+                        <input
+                            type="number"
+                            placeholder="Maximum"
+                        >
+
+                    </div>
+
+                    <button>
+                        Apply Filters
+                    </button>
+
+                </aside>
+
+                <!-- Listings -->
+                <section id="properties">
+
+                    <h2>Available Properties</h2>
+
+                    <div class="property-grid">
+
+                        <!-- Card 1 -->
+                        <article class="property-card">
+
+                            <img
+                                src="assets/images/property1.jpg"
+                                alt="Property"
+                            >
+
+                            <div class="card-content">
+
+                                <h3>
+                                    Commercial Stand
+                                </h3>
+
+                                <p>
+                                    Harare CBD
+                                </p>
+
+                                <p>
+                                    $85,000
+                                </p>
+
+                                <p>
+                                    Commercial • Land
+                                </p>
+
+                                <a href="property.html?id=1">
+                                    View Details
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="property-card">
+
+                            <img
+                                src="assets/images/property2.jpg"
+                                alt="Property"
+                            >
+
+                            <div class="card-content">
+
+                                <h3>
+                                    Residential House
+                                </h3>
+
+                                <p>
+                                    Borrowdale
+                                </p>
+
+                                <p>
+                                    $220,000
+                                </p>
+
+                                <p>
+                                    Residential • Built
+                                </p>
+
+                                <a href="property.html?id=2">
+                                    View Details
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="property-card">
+
+                            <img
+                                src="assets/images/property3.jpg"
+                                alt="Property"
+                            >
+
+                            <div class="card-content">
+
+                                <h3>
+                                    Industrial Warehouse
+                                </h3>
+
+                                <p>
+                                    Msasa
+                                </p>
+
+                                <p>
+                                    $450,000
+                                </p>
+
+                                <p>
+                                    Industrial • Built
+                                </p>
+
+                                <a href="property.html?id=3">
+                                    View Details
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+		<footer>
+
+			<div>
+				<h3>Propertyhill Realty</h3>
+				<p>Innovative Solutions</p>
+			</div>
+
+			<div>
+				<h3>Quick Links</h3>
+
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Listings</a></li>
+					<li><a href="#">Valuation</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>Contact</h3>
+
+				<p>
+					<a href="tel:+263775970121">+263 775 970 121</a>
+				</p>
+
+				<p>
+					<a href="mailto:info@propertyhillrealty.com">info@propertyhillrealty.com</a>
+				</p>
+
+				<p>
+					<a href="https://maps.google.com/?q=74 Jason Moyo Avenue, Harare" target="_blank">
+						4th Floor, CABS Centre, 74 Jason Moyo Avenue, Harare
+					</a>
+				</p>
+			</div>
+
+		</footer>
+		<script>
+		let lastScrollY = window.scrollY;
+		const header = document.querySelector("header");
+
+		window.addEventListener("scroll", () => {
+			const currentScrollY = window.scrollY;
+
+			// shadow effect after slight scroll
+			if (currentScrollY > 50) {
+				header.classList.add("scrolled");
+			} else {
+				header.classList.remove("scrolled");
+			}
+
+			// hide/show logic
+			if (currentScrollY > lastScrollY && currentScrollY > 100) {
+				header.classList.add("hide"); // scrolling down
+			} else {
+				header.classList.remove("hide"); // scrolling up
+			}
+
+			lastScrollY = currentScrollY;
+		});
+		</script>
+    </body>
+</html>
