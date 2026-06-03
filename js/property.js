@@ -6,7 +6,7 @@ function getFiltersFromURL() {
 
   return {
     id: params.get("id"),
-    type: params.get("type"),   // commercial | residential | industrial
+    type: params.get("type"),   // com | res | ind
     deal: params.get("deal")    // sale | lease
   };
 }
