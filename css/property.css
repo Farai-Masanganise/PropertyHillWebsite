@@ -1,7 +1,71 @@
-/* GALLERY */
-#property-gallery img {
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FFFFFF;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #111111;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+}
+
+/* Make sections look clean cards */
+section {
+    background: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+#property-gallery {
+    grid-column: 1 / 2;
+}
+
+.main-image img {
     width: 100%;
-    border-radius: 8px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #B3954D;
 }
 
 .thumbnails {
@@ -12,23 +76,193 @@
 
 .thumbnails img {
     width: 80px;
-    height: 60px;
+    height: 70px;
     object-fit: cover;
+    border-radius: 6px;
     cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
 }
 
-/* SUMMARY */
-#property-summary {
-    margin-top: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+.thumbnails img:hover {
+    border-color: #B3954D;
+    transform: scale(1.05);
 }
 
-/* SECTIONS */
-section {
-    margin-top: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+/* =========================
+   PROPERTY SUMMARY
+========================= */
+
+#property-summary h1 {
+    margin-bottom: 5px;
+}
+
+#property-summary p {
+    margin-bottom: 8px;
+}
+
+#property-summary h2 {
+    color: #B3954D;
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #B3954D;
+    color: #FFFFFF;
+}
+
+/* =========================
+   QUICK INFO
+========================= */
+
+#quick-info ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#quick-info li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   DESCRIPTION + FEATURES
+========================= */
+
+#description p {
+    margin-top: 10px;
+}
+
+#features ul {
+    margin-top: 10px;
+    list-style: none;
+}
+
+#features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+#features li::before {
+    content: "•";
+    color: #B3954D;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.map-placeholder {
+    height: 200px;
+    background: #f5f5f5;
+    border: 2px dashed #B3954D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555555;
+    margin-top: 10px;
+}
+
+/* =========================
+   AGENT CARD
+========================= */
+
+.agent-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.agent-card h3 {
+    margin-bottom: 5px;
+}
+
+.agent-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* =========================
+   RELATED PROPERTIES
+========================= */
+
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.related-grid article {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.related-grid article:hover {
+    border-color: #B3954D;
+    transform: translateY(-3px);
+}
+
+.related-grid a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.related-grid a:hover {
+    color: #B3954D;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .actions,
+    .agent-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-image img {
+        height: 300px;
+    }
 }
