@@ -43,7 +43,7 @@ async function loadProperties(filters) {
 // 4. Get 6 random properties
 // --------------------------------
 function getInitial(properties, limit = 6) {
-  return properties
+  return [...properties]
     .sort(() => Math.random() - 0.5)
     .slice(0, limit);
 }
