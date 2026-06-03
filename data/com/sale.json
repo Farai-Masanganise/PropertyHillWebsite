@@ -30,25 +30,27 @@
     }
   },
   {
-    "id": 2,
-    "title": "Residential House",
-    "location": "Borrowdale, Harare",
-    "price": 150000,
-    "type": "Residential",
+    "id": 4,
+    "title": "Retail Shop Space",
+    "location": "Avondale, Harare",
+    "price": 120000,
+    "type": "Commercial",
     "deal": "Sale",
     "status": "For Sale",
     "category": "Built",
-    "landSize": "1,200 sqm",
+    "landSize": "600 sqm",
     "titleDeed": "Available",
-    "description": "A modern family home located in Borrowdale with spacious rooms, modern finishes, and a secure gated community.",
+    "description": "Well-positioned retail shop space in Avondale with high foot traffic. Suitable for supermarkets, pharmacies, or boutique stores.",
     "features": [
-      "Modern Design",
-      "Gated Community",
-      "Spacious Yard"
+      "High Foot Traffic",
+      "Prime Retail Location",
+      "Roadside Visibility",
+      "Parking Space Available"
     ],
     "images": [
       "assets/images/property1.jpg",
-      "assets/images/property2.jpg"
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
     ],
     "agent": {
       "name": "Agent Name",
@@ -58,26 +60,28 @@
     }
   },
   {
-    "id": 3,
-    "title": "Industrial Warehouse",
-    "location": "Msasa, Harare",
-    "price": 220000,
-    "type": "Industrial",
-    "deal": "Lease",
-    "status": "Available",
+    "id": 2,
+    "title": "Office Block Investment",
+    "location": "Newlands, Harare",
+    "price": 300000,
+    "type": "Commercial",
+    "deal": "Sale",
+    "status": "For Sale",
     "category": "Built",
-    "landSize": "3,500 sqm",
+    "landSize": "1,800 sqm",
     "titleDeed": "Available",
-    "description": "Large industrial warehouse located in Msasa with easy truck access and high storage capacity.",
+    "description": "Modern office block ideal for corporate headquarters or rental investment. Located in a secure and accessible business district.",
     "features": [
-      "Truck Access",
-      "High Ceiling Storage",
-      "Secure Facility"
+      "Modern Office Layout",
+      "Secure Complex",
+      "High Rental Yield Potential",
+      "Easy Highway Access"
     ],
     "images": [
       "assets/images/property1.jpg",
       "assets/images/property2.jpg",
-      "assets/images/property3.jpg"
+      "assets/images/property3.jpg",
+      "assets/images/property4.jpg"
     ],
     "agent": {
       "name": "Agent Name",

@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Family Home",
+    "location": "Borrowdale, Harare",
+    "price": 180000,
+    "type": "Residential",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "1,500 sqm",
+    "titleDeed": "Available",
+    "description": "Beautiful modern family home in Borrowdale with spacious rooms, modern finishes, and a secure gated environment.",
+    "features": [
+      "Gated Community",
+      "Modern Finishes",
+      "Spacious Yard",
+      "Secure Neighborhood"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Luxury Townhouse",
+    "location": "Greendale, Harare",
+    "price": 220000,
+    "type": "Residential",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "1,200 sqm",
+    "titleDeed": "Available",
+    "description": "Elegant luxury townhouse in Greendale featuring modern architecture, private garden, and secure complex living.",
+    "features": [
+      "Private Garden",
+      "Secure Complex",
+      "Modern Design",
+      "Backup Power Ready"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg",
+      "assets/images/property4.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Residential House",
+    "location": "Borrowdale, Harare",
+    "price": 150000,
+    "type": "Residential",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "1,200 sqm",
+    "titleDeed": "Available",
+    "description": "A modern family home located in Borrowdale with spacious rooms, modern finishes, and a secure gated community.",
+    "features": [
+      "Modern Design",
+      "Gated Community",
+      "Spacious Yard"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  }
+]

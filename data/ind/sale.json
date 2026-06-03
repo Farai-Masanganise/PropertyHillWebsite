@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Industrial Warehouse Complex",
+    "location": "Msasa Industrial, Harare",
+    "price": 450000,
+    "type": "Industrial",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "3,800 sqm",
+    "titleDeed": "Available",
+    "description": "Large industrial warehouse complex located in Msasa with multiple loading bays and excellent truck access. Ideal for logistics or manufacturing operations.",
+    "features": [
+      "Multiple Loading Bays",
+      "Truck Access",
+      "High Storage Capacity",
+      "Secure Perimeter"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Manufacturing Facility",
+    "location": "Southerton, Harare",
+    "price": 520000,
+    "type": "Industrial",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "5,000 sqm",
+    "titleDeed": "Available",
+    "description": "Fully equipped manufacturing facility in Southerton with heavy-duty power supply and reinforced flooring.",
+    "features": [
+      "Heavy Power Supply",
+      "Reinforced Flooring",
+      "Production Halls",
+      "Easy Transport Access"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg",
+      "assets/images/property4.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Logistics & Distribution Hub",
+    "location": "Graniteside, Harare",
+    "price": 610000,
+    "type": "Industrial",
+    "deal": "Sale",
+    "status": "For Sale",
+    "category": "Built",
+    "landSize": "6,200 sqm",
+    "titleDeed": "Available",
+    "description": "Strategically located logistics hub designed for warehousing, distribution, and fleet operations.",
+    "features": [
+      "Fleet Parking Area",
+      "Loading Docks",
+      "24/7 Security",
+      "Prime Industrial Location"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  }
+]

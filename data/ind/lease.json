@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Industrial Warehouse to Let",
+    "location": "Msasa Industrial, Harare",
+    "price": 4500,
+    "type": "Industrial",
+    "deal": "Lease",
+    "status": "To Let",
+    "category": "Built",
+    "landSize": "3,000 sqm",
+    "titleDeed": "N/A",
+    "description": "Spacious industrial warehouse in Msasa with excellent truck access, ideal for storage, distribution, or light manufacturing.",
+    "features": [
+      "Truck Access",
+      "Loading Bay",
+      "Secure Yard",
+      "High Storage Capacity"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Industrial Factory Space to Rent",
+    "location": "Southerton, Harare",
+    "price": 6000,
+    "type": "Industrial",
+    "deal": "Lease",
+    "status": "Available",
+    "category": "Built",
+    "landSize": "4,500 sqm",
+    "titleDeed": "N/A",
+    "description": "Well-equipped factory space in Southerton with heavy-duty power supply and excellent logistics access.",
+    "features": [
+      "Heavy Power Supply",
+      "Reinforced Flooring",
+      "Industrial Zoning",
+      "Transport Access"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg",
+      "assets/images/property4.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Industrial Warehouse",
+    "location": "Msasa, Harare",
+    "price": 220000,
+    "type": "Industrial",
+    "deal": "Lease",
+    "status": "Available",
+    "category": "Built",
+    "landSize": "3,500 sqm",
+    "titleDeed": "Available",
+    "description": "Large industrial warehouse located in Msasa with easy truck access and high storage capacity.",
+    "features": [
+      "Truck Access",
+      "High Ceiling Storage",
+      "Secure Facility"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  }
+]

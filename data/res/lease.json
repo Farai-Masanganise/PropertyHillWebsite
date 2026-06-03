@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Family House to Rent",
+    "location": "Avondale, Harare",
+    "price": 1200,
+    "type": "Residential",
+    "deal": "Lease",
+    "status": "To Let",
+    "category": "Built",
+    "landSize": "1,000 sqm",
+    "titleDeed": "N/A",
+    "description": "Spacious family home in Avondale with modern finishes, secure yard, and close proximity to schools and shopping centers.",
+    "features": [
+      "Secure Yard",
+      "Modern Kitchen",
+      "Close to Schools",
+      "Borehole Water"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Townhouse to Rent",
+    "location": "Borrowdale Brooke, Harare",
+    "price": 1800,
+    "type": "Residential",
+    "deal": "Lease",
+    "status": "Available",
+    "category": "Built",
+    "landSize": "800 sqm",
+    "titleDeed": "N/A",
+    "description": "Modern townhouse in a secure complex with 24/7 security and shared amenities.",
+    "features": [
+      "Secure Complex",
+      "24/7 Security",
+      "Modern Finishes",
+      "Parking Space"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Apartment to Let",
+    "location": "CBD, Harare",
+    "price": 900,
+    "type": "Residential",
+    "deal": "Lease",
+    "status": "To Let",
+    "category": "Built",
+    "landSize": "60 sqm",
+    "titleDeed": "N/A",
+    "description": "Convenient apartment in the city centre, ideal for professionals seeking easy access to work and transport.",
+    "features": [
+      "City Centre Location",
+      "Easy Transport Access",
+      "Security",
+      "Low Maintenance"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  }
+]

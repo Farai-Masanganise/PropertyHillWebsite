@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Retail Shop to Let",
+    "location": "City Centre, Harare",
+    "price": 2500,
+    "type": "Commercial",
+    "deal": "Lease",
+    "status": "To Let",
+    "category": "Built",
+    "landSize": "400 sqm",
+    "titleDeed": "N/A",
+    "description": "Well-located retail shop in Harare City Centre with high pedestrian traffic. Ideal for fashion stores, electronics, or small supermarkets.",
+    "features": [
+      "High Foot Traffic",
+      "Central Location",
+      "Street Frontage",
+      "Secure Premises"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Office Space to Lease",
+    "location": "Belgravia, Harare",
+    "price": 3200,
+    "type": "Commercial",
+    "deal": "Lease",
+    "status": "Available",
+    "category": "Built",
+    "landSize": "900 sqm",
+    "titleDeed": "N/A",
+    "description": "Modern office space located in Belgravia, suitable for corporate offices, NGOs, or consultancies.",
+    "features": [
+      "Air Conditioned Offices",
+      "Secure Parking",
+      "Backup Power Ready",
+      "Fast Internet Access Area"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Warehouse Space to Rent",
+    "location": "Msasa Industrial, Harare",
+    "price": 5000,
+    "type": "Commercial",
+    "deal": "Lease",
+    "status": "To Let",
+    "category": "Built",
+    "landSize": "2,500 sqm",
+    "titleDeed": "N/A",
+    "description": "Large warehouse space in Msasa Industrial area with easy truck access and loading bays.",
+    "features": [
+      "Truck Loading Bays",
+      "High Storage Capacity",
+      "Industrial Zone Location",
+      "24/7 Security"
+    ],
+    "images": [
+      "assets/images/property1.jpg",
+      "assets/images/property2.jpg",
+      "assets/images/property3.jpg",
+      "assets/images/property4.jpg"
+    ],
+    "agent": {
+      "name": "Agent Name",
+      "role": "Real Estate Consultant",
+      "phone": "+263 XXX XXX XXX",
+      "email": "agent@company.com"
+    }
+  }
+]
