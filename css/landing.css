@@ -137,66 +137,6 @@
     margin-bottom: 15px;
 }
 
-/* ===== Features List ===== */
-.features-list {
-    margin: 20px auto 40px;
-    padding-left: 20px;
-    max-width: 900px;
-}
-
-.features-list li {
-    margin-bottom: 10px;
-    list-style: disc;
-    color: #555555;
-    font-size: 15px;
-}
-
-/* ===== Reviews Section ===== */
-.reviews-track {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-    overflow-x: auto;
-    padding: 20px 10px;
-    scroll-behavior: smooth;
-}
-
-/* Hide scrollbar (optional clean look) */
-.reviews-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* Review cards */
-.reviews-track blockquote {
-    flex: 0 0 auto;
-    width: 320px;
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Hover effect */
-.reviews-track blockquote:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-}
-
-/* Review text */
-.reviews-track blockquote p {
-    font-style: italic;
-    color: #555555;
-    line-height: 1.6;
-}
-
-/* Footer (name + service type) */
-.reviews-track blockquote footer {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #111111;
-}
-
 /* ===== CTA Text ===== */
 .cta-text {
     text-align: center;
@@ -219,7 +159,7 @@
 }
 
 .cta-button:hover {
-    background: #333333;
+    background: #B3954D;
     transform: translateY(-2px);
 }
 
@@ -248,7 +188,9 @@
     }
 }
 
-/* SECTION WRAPPER */
+/*-------------------------------------
+/ SECTION WRAPPER
+/-------------------------------------*/
 #services {
   padding: 80px 40px;
   background: #FFFFFF;
@@ -476,4 +418,43 @@
     .contact-info {
         padding: 25px;
     }
+}
+
+/* ===== Reviews Section ===== */
+.reviews-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar (optional clean look) */
+.reviews-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Review cards */
+.reviews-track blockquote {
+    flex: 0 0 auto;
+    width: 320px;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.reviews-track blockquote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+}
+
+/* Review text */
+.reviews-track blockquote p {
+    font-style: italic;
+    color: #555555;
+    line-height: 1.6;
 }
