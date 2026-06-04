@@ -454,7 +454,7 @@
 /* Review cards */
 .reviews-track blockquote {
     flex: 0 0 auto;
-    width: 320px;
+    width: 500px;
     background: #FFFFFF;
     padding: 20px;
     border-radius: 12px;
