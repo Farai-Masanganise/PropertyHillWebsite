@@ -245,6 +245,22 @@
   color: #555555;
   line-height: 1.5;
 }
+/* DETAILS LINK */
+#services .cards article a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+#services .cards article a:hover {
+    color: #B3954D;
+    border-bottom: 2px solid #B3954D;
+}
 
 /* =========================
    Contact CTA Section
