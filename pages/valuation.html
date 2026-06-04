@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Property Listings</title>
+        
+        
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/main/header.css">
+        <link rel="stylesheet" href="../css/valuation.css">
+        <link rel="stylesheet" href="../css/main/footer.css">
+    </head>
+
+    <body>
+		<!-- Header -->
+		<header>
+			<nav>
+				<div class="logo">
+					<a href="../index.html#" class="logo-link">
+						<div class="logo-img">
+							<img src="../assets/logo.jpeg">
+						</div>
+
+						<div class="logo-text">
+							Propertyhill <span>Realty</span>
+						</div>
+					</a>
+				</div>
+
+				<ul class="main-nav">
+					<li><a href="../index.html#">Home</a></li>
+
+					<li class="dropdown">
+						<span class="drop-trigger">Sales</span>
+						<div class="dropdown-menu">
+							<a href="../pages/listings.html?type=res&deal=sale">Residential</a>
+							<a href="../pages/listings.html?type=com&deal=sale">Commercial</a>
+							<a href="../pages/listings.html?type=ind&deal=sale">Industrial</a>
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<span class="drop-trigger">Leasing</span>
+						<div class="dropdown-menu">
+							<a href="../pages/listings.html?type=res&deal=lease">Residential</a>
+							<a href="../pages/listings.html?type=com&deal=lease">Commercial</a>
+							<a href="../pages/listings.html?type=ind&deal=lease">Industrial</a>
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="../pages/valuation.html">Valuation</a>
+					</li>	
+
+					<li>
+						<a href="../pages/contact.html">Contact Us</a>
+					</li>
+				</ul>
+				
+				<form class="search-bar" role="search">
+				  <input type="search" placeholder="Search site..." />
+				  <button type="submit">Search</button>
+				</form>
+			</nav>
+		</header>
+
+        <main class="valuation-main">
+
+            <!-- HERO / SUMMARY -->
+            <section class="hero-summary">
+                <div class="hero-content">
+                <h1>Professional Valuation Services</h1>
+                <p>
+                    Delivering accurate, transparent, and internationally aligned valuation solutions
+                    across government, corporate, and private sectors.
+                </p>
+                </div>
+            </section>
+
+            <!-- CORE GRID -->
+            <section class="grid-layout">
+
+                <!-- Valuation -->
+                <div class="card highlight">
+                <h2>Valuation</h2>
+                <p>
+                    Comprehensive valuation services covering real estate, assets, and market-based assessments
+                    using industry-approved methodologies.
+                </p>
+                </div>
+
+                <!-- Certifications -->
+                <div class="card">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Certified Valuation Professional</li>
+                    <li>International Valuation Standards Compliance</li>
+                    <li>Risk & Asset Assessment Accreditation</li>
+                </ul>
+                </div>
+
+                <!-- Memberships -->
+                <div class="card">
+                <h2>Memberships</h2>
+                <ul>
+                    <li>Professional Valuers Association</li>
+                    <li>Regional Surveying & Valuation Bodies</li>
+                    <li>Industry Regulatory Affiliations</li>
+                </ul>
+                </div>
+
+                <!-- Registered -->
+                <div class="card muted">
+                <h2>Registered (Work in Progress)</h2>
+                <p>
+                    Official registrations and compliance listings are currently being finalized.
+                    Updates will be published soon.
+                </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="card stats">
+                <h2>Years of Experience</h2>
+                <div class="stat-value">15+ Years</div>
+                <p>Extensive experience across public and private valuation sectors.</p>
+                </div>
+
+            </section>
+
+            <!-- PREVIOUS VALUATIONS -->
+            <section class="section-block">
+                <h2>Previous Valuations</h2>
+
+                <div class="subgrid">
+
+                <article class="subcard">
+                    <h3>Government</h3>
+                    <p>
+                    Valuation of public infrastructure, state-owned assets, and institutional properties
+                    for regulatory and financial reporting purposes.
+                    </p>
+                </article>
+
+                <article class="subcard">
+                    <h3>Corporates</h3>
+                    <p>
+                    Commercial property, industrial assets, and enterprise valuation services for private sector organizations.
+                    </p>
+                </article>
+
+                <article class="subcard">
+                    <h3>Individuals / Market Valuations</h3>
+                    <p>
+                    Residential properties, land, and open-market valuations for private clients and investment decisions.
+                    </p>
+                </article>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+		<footer>
+
+			<div>
+				<h3>Propertyhill Realty</h3>
+				<p>Innovative Solutions</p>
+			</div>
+
+			<div>
+				<h3>Quick Links</h3>
+
+				<ul>
+					<li><a href="../index.html#">Home</a></li>
+					<li><a href="#">Listings</a></li>
+					<li><a href="#">Valuation</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>Contact</h3>
+
+				<p>
+					<a href="tel:+263775970121">+263 775 970 121</a>
+				</p>
+
+				<p>
+					<a href="mailto:info@propertyhillrealty.com">info@propertyhillrealty.com</a>
+				</p>
+
+				<p>
+					<a href="https://maps.google.com/?q=74 Jason Moyo Avenue, Harare" target="_blank">
+						4th Floor, CABS Centre, 74 Jason Moyo Avenue, Harare
+					</a>
+				</p>
+			</div>
+
+		</footer>
+		<script>
+		let lastScrollY = window.scrollY;
+		const header = document.querySelector("header");
+
+		window.addEventListener("scroll", () => {
+			const currentScrollY = window.scrollY;
+
+			// shadow effect after slight scroll
+			if (currentScrollY > 50) {
+				header.classList.add("scrolled");
+			} else {
+				header.classList.remove("scrolled");
+			}
+
+			// hide/show logic
+			if (currentScrollY > lastScrollY && currentScrollY > 100) {
+				header.classList.add("hide"); // scrolling down
+			} else {
+				header.classList.remove("hide"); // scrolling up
+			}
+
+			lastScrollY = currentScrollY;
+		});
+		</script>
+		<script src="../js/listings.js"></script>
+    </body>
+</html>

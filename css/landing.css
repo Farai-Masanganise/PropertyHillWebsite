@@ -437,6 +437,12 @@
 }
 
 /* ===== Reviews Section ===== */
+#customer-reviews{
+    width: 100%;
+    padding: 0px 80px;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+}
 .reviews-track {
     display: flex;
     flex-wrap: nowrap;
@@ -454,7 +460,7 @@
 /* Review cards */
 .reviews-track blockquote {
     flex: 0 0 auto;
-    width: 500px;
+    width: 400px;
     background: #FFFFFF;
     padding: 20px;
     border-radius: 12px;
