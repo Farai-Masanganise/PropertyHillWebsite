@@ -210,46 +210,53 @@
 				<p>Speak with our team today for expert help with buying, selling, leasing, property valuation, and consultancy services.</p>
 				
 				<div class="contact-row">
-				
-					<!-- Map -->
-					<div class="contact-map">
-						<iframe 
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d949.5445108043032!2d31.050260269574206!3d-17.83028672225725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e67ede4495%3A0xeb8733ccfc7e0612!2sPropertyhill%20Realty!5e0!3m2!1sen!2szw!4v1780395920123!5m2!1sen!2szw"
-							width="100%" 
-							height="100%" 
-							style="border:0;" 
-							allowfullscreen="" 
-							loading="lazy">
-						</iframe>
-					</div>
-					
-					<!-- side split: Contact Info + form -->
-					<div class="contact-side">
-					
-						<!-- Contact Info -->
-						<div class="contact-info">
-							<h3>Get in Touch</h3>
+
+					<!-- Contact Form -->
+					<div class="contact-form" id="contact-form">
+						<h3>Send Us a Message</h3>
+
+						<form>
+							<label for="name">Your Name</label>
+							<input type="text" id="name" name="name" required>
+
+							<label for="email">Your Email</label>
+							<input type="email" id="email" name="email" required>
 							
-							<p><strong>Address:</strong> 4th Floor, CABS Centre, 74 Jason Moyo Avenue, Harare || <strong>Email:</strong> info@propertyhillrealty.com / propertyhillrealty13@gmail.com</p>
-							<p><strong>Phone:</strong> +263 775 970 121 / +263 715 026 330 || <strong>WhatsApp:</strong> +263 775 970 121 / +263 715 026 330</p>
-						</div>
+							<label for="message">Your Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
 
-						<!-- Contact Form -->
-						<div class="contact-form" id="contact-form">
-							<h3>Send Us a Message</h3>
-
-							<form>
-								<label for="email">Your Email</label>
-								<input type="email" id="email" name="email" required>
-
-								<label for="message">Your Message</label>
-								<textarea id="message" name="message" rows="5" required></textarea>
-
-								<button type="submit">Submit</button>
-							</form>
-						</div>
-
+							<button type="submit">Submit</button>
+						</form>
 					</div>
+
+					<!-- Contact Info -->
+					<div class="contact-info">
+						<h3>Get in Touch</h3>
+
+						<div class="info-item">
+							<h4>Office Address</h4>
+							<p>4th Floor, CABS Centre, 74 Jason Moyo Avenue, Harare</p>
+						</div>
+
+						<div class="info-item">
+							<h4>Email</h4>
+							<p>info@propertyhillrealty.com</p>
+							<p>propertyhillrealty13@gmail.com</p>
+						</div>
+
+						<div class="info-item">
+							<h4>Phone</h4>
+							<p>+263 775 970 121</p>
+							<p>+263 715 026 330</p>
+						</div>
+
+						<div class="info-item">
+							<h4>WhatsApp</h4>
+							<p>+263 775 970 121</p>
+							<p>+263 715 026 330</p>
+						</div>
+					</div>
+
 				</div>
 				
 			</section>
