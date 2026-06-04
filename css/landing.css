@@ -311,9 +311,9 @@
 }
 
 #contact-cta h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #111111;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: 700;
 }
 
@@ -321,8 +321,8 @@
     max-width: 700px;
     font-size: 1rem;
     color: #555555;
-    line-height: 1.7;
-    margin-bottom: 50px;
+    line-height: 1.5;
+    margin-bottom: 30px;
 }
 
 /* =========================
@@ -331,17 +331,17 @@
 
 .contact-row {
     display: flex;
-    gap: 40px;
+    gap: 25px;
     align-items: stretch;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .contact-form,
 .contact-info {
     flex: 1;
     background: #ffffff;
-    border-radius: 16px;
-    padding: 35px;
+    border-radius: 12px;
+    padding: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
@@ -351,9 +351,9 @@
 
 .contact-form h3,
 .contact-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #111111;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     font-weight: 700;
 }
 
@@ -363,8 +363,8 @@
 
 .contact-form label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #111111;
 }
@@ -372,19 +372,19 @@
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 18px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
     border: 1px solid #d9d9d9;
     border-radius: 10px;
     background: #ffffff;
     color: #111111;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
 }
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 100px;
 }
 
 .contact-form input:focus,
@@ -398,7 +398,7 @@
 
 .contact-form button {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     border: none;
     border-radius: 10px;
     background: #111111;
@@ -419,8 +419,8 @@
 ========================= */
 
 .info-item {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
     border-bottom: 1px solid #eeeeee;
 }
 
@@ -433,15 +433,15 @@
 .info-item h4 {
     font-size: 1rem;
     color: #111111;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     font-weight: 700;
 }
 
 .info-item p {
     margin: 4px 0;
     color: #666666;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 /* =========================
