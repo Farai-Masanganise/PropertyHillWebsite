@@ -328,6 +328,7 @@
 /* =========================
    Layout
 ========================= */
+
 .contact-row {
     display: flex;
     gap: 25px;
@@ -335,19 +336,12 @@
     margin-bottom: 20px;
 }
 
-/* Make both panels equal-height flexible columns */
 .contact-form,
 .contact-info {
     flex: 1;
     background: #ffffff;
     border-radius: 12px;
     padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-
-    /* ensures internal spacing behaves consistently */
-    height: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
@@ -359,35 +353,51 @@
 .contact-info h3 {
     font-size: 1.25rem;
     color: #111111;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-weight: 700;
 }
 
 /* =========================
-   FORM: evenly spaced layout
+   Form Styling
 ========================= */
 
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-/* instead of relying only on margins */
 .contact-form label {
-    margin-bottom: 6px;
+    display: block;
+    margin-bottom: 5px;
     font-size: 0.9rem;
     font-weight: 600;
+    color: #111111;
 }
 
 .contact-form input,
 .contact-form textarea {
-    margin-bottom: 14px;
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
-/* pushes button to bottom for clean alignment */
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #B3954D;
+    box-shadow: 0 0 0 4px rgba(179, 149, 77, 0.15);
+    outline: none;
+}
+
+/* Submit Button */
+
 .contact-form button {
-    margin-top: auto;
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 10px;
@@ -405,33 +415,35 @@
 }
 
 /* =========================
-   CONTACT INFO:
+   Contact Info
 ========================= */
-
-.contact-info {
-    justify-content: space-between;
-}
 
 .info-item {
     padding-bottom: 12px;
-    margin-bottom: 0;
+    margin-bottom: 12px;
     border-bottom: 1px solid #eeeeee;
 }
 
-/* last item clean edge */
 .info-item:last-child {
     border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-/* optional: tighter text rhythm */
 .info-item h4 {
+    font-size: 1rem;
+    color: #111111;
     margin-bottom: 4px;
+    font-weight: 700;
 }
 
 .info-item p {
-    margin: 2px 0;
+    margin: 4px 0;
+    color: #666666;
     line-height: 1.4;
+    font-size: 0.9rem;
 }
+
 /* =========================
    Responsive
 ========================= */
