@@ -4,8 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Propertyhill Realty</title>
-		
-		
+
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/main/header.css">
 		<link rel="stylesheet" href="css/landing.css">
@@ -70,160 +69,240 @@
 
 			<!-- Hero -->
 			<section id="hero">
-				<h1>Innovative Property Solutions</h1>
+				<div class="hero-bg"></div>
 
-				<p>
-					Sales, Leasing and Valuation Services for
-					Commercial, Residential and Industrial Properties.
-				</p>
+				<div class="hero-content">
 
-				<div class="search-pill">
-					<form action="/pages/listings.html" method="GET" class="pill">
+					<span class="hero-eyebrow">Luxury Property Solutions</span>
 
-						<!-- Listing Type -->
-						<select id="listing_type" name="listing_type">
-						<option value="sale">For Sale</option>
-						<option value="rent">To Rent</option>
-						</select>
+					<h1>Innovative Property Solutions</h1>
 
-						<!-- Property Type -->
-						<select id="property_type" name="property_type">
-						<option value="">Property Type</option>
+					<p>
+						Sales, Leasing and Valuation Services for
+						Commercial, Residential and Industrial Properties.
+					</p>
 
-						<optgroup label="Land">
-							<option value="residential-land">Residential Land</option>
-							<option value="commercial-land">Commercial Land</option>
-							<option value="industrial-land">Industrial Land</option>
-							<option value="agricultural-land">Agricultural / Farms</option>
-						</optgroup>
+					<div class="hero-cta">
 
-						<optgroup label="Built Property">
-							<option value="residential">Residential</option>
-							<option value="commercial">Commercial</option>
-							<option value="industrial">Industrial</option>
-						</optgroup>
-						</select>
-
-						<!-- Location -->
-						<input
-						id="location"
-						type="text"
-						name="location"
-						placeholder="Enter location"
-						autocomplete="address-level2"
-						>
-
-						<!-- Max Price  -->
-						<input
-						id="max_price"
-						type="number"
-						name="max_price"
-						placeholder="Max price (USD)"
-						min="0"
-						step="1"
-						>
-
-						<!-- Search -->
-						<button type="submit">
-						Search
+						<button onclick="window.location.href='pages/valuation.html'">
+							Request For Valuation
 						</button>
 
-					</form>
+					</div>
+
+						<div class="search-pill">
+							<form action="/pages/listings.html" method="GET" class="pill">
+
+								<!-- Listing Type -->
+								<div class="pill-field">
+									<select id="listing_type" name="listing_type">
+										<option value="sale">For Sale</option>
+										<option value="rent">To Rent</option>
+									</select>
+								</div>
+
+								<div class="pill-divider"></div>
+
+								<!-- Property Type -->
+								<div class="pill-field">
+									<select id="property_type" name="property_type">
+										<option value="">Property Type</option>
+
+										<optgroup label="Land">
+											<option value="residential-land">Residential Land</option>
+											<option value="commercial-land">Commercial Land</option>
+											<option value="industrial-land">Industrial Land</option>
+											<option value="agricultural-land">Agricultural / Farms</option>
+										</optgroup>
+
+										<optgroup label="Built Property">
+											<option value="residential">Residential</option>
+											<option value="commercial">Commercial</option>
+											<option value="industrial">Industrial</option>
+										</optgroup>
+									</select>
+								</div>
+
+								<div class="pill-divider"></div>
+
+								<!-- Location -->
+								<div class="pill-field">
+									<input
+										id="location"
+										type="text"
+										name="location"
+										placeholder="Enter location"
+										autocomplete="address-level2"
+									>
+								</div>
+
+								<div class="pill-divider"></div>
+
+								<!-- Max Price -->
+								<div class="pill-field">
+									<input
+										id="max_price"
+										type="number"
+										name="max_price"
+										placeholder="Max price (USD)"
+										min="0"
+										step="1"
+									>
+								</div>
+
+								<!-- Search -->
+								<button type="submit">Search</button>
+
+							</form>
+						</div>
 				</div>
-				<button onclick="window.location.href='pages/valuation.html'">
-					Request For Valuation
-				</button>				
 
 			</section>
 
 			<!-- About Section -->
 			<section id="about">
+				<div class="about-rings"></div>
+				<div class="about-grid">
+					<div class="about-image-wrap">
+						<img src=assets/interior.png></img>
+					</div>
+					<div class="about-text">
 
-				<h2>About Propertyhill Realty</h2>
+						<h2>About Propertyhill Realty</h2>
 
-				<p>
-					Propertyhill Realty (Pvt) Ltd is a registered real estate company established in October 2013.
-					We specialize in valuations, property sales, auctions, management, and development consultancy.
-				</p>
+						<p>
+							Propertyhill Realty (Pvt) Ltd is a registered real estate company established in October 2013.
+							We specialize in valuations, property sales, auctions, management, and development consultancy.
+						</p>
 
-				<p>
-					Registered with the Estate Agents Council of Zimbabwe and the Valuers Council of Zimbabwe,
-					we deliver transparent, professional, and efficient real estate solutions across Zimbabwe.
-				</p>
+						<p>
+							Registered with the Estate Agents Council of Zimbabwe and the Valuers Council of Zimbabwe,
+							we deliver transparent, professional, and efficient real estate solutions across Zimbabwe.
+						</p>
 
-				<p>
-					We are a trusted real estate agency in Zimbabwe offering property valuation, sales, leasing, and management services.
-					Our team combines industry expertise with a client-first approach to ensure smooth and reliable property transactions.
-				</p>
+						<p>
+							We are a trusted real estate agency in Zimbabwe offering property valuation, sales, leasing, and management services.
+							Our team combines industry expertise with a client-first approach to ensure smooth and reliable property transactions.
+						</p>
+						<div class="about-stats">
 
-				<p class="cta-text">
-					Looking to buy, sell, rent, or manage property? Our team is ready to assist you with professional guidance.
-				</p>
+							<div class="stat-item">
+								<span class="number">12+</span>
+								<span class="label">Years Experience</span>
+							</div>
 
-				<a href="#contact-cta" class="cta-button">Get in Touch</a>
+							<div class="stat-item">
+								<span class="number">250+</span>
+								<span class="label">Projects Completed</span>
+							</div>
 
+							<div class="stat-item">
+								<span class="number">100%</span>
+								<span class="label">Client Satisfaction</span>
+							</div>
+						</div>
+
+						<p class="cta-text">
+							Looking to buy, sell, rent, or manage property? Our team is ready to assist you with professional guidance.
+						</p>
+
+						<a href="#contact-cta" class="cta-button">Get in Touch</a>
+
+					</div>
+				</div>
 			</section>
 
 			<!-- Services -->
 			<section id="services">
-				<div class ="title">
+				<div class="title">
 					<h2>Our Services</h2>
 				</div>
+
 				<div class="cards">
+
 					<article>
-						<h3>Property Sales</h3>
+						<span class="card-num">01</span>
+						  <div class="card-header">
+							<h3>Property Sales</h3>
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M3 10.5L12 3l9 7.5"></path>
+									<path d="M5 9.5V21h14V9.5"></path>
+									<path d="M9 21v-6h6v6"></path>
+								</svg>
+							</div>
+						  </div>					
 						<p>We help clients buy and sell residential and commercial properties with expert market guidance, transparent pricing, and end-to-end support throughout the transaction process.</p>
-						    <a href="pages/listings.html?type=res&deal=sale">
-                                 View Details
-                            </a>
+						<a href="pages/listings.html?type=res&deal=sale">View Details</a>
 					</article>
 
 					<article>
-						<h3>Property Leasing</h3>
+						<span class="card-num">02</span>
+						  <div class="card-header">
+							<h3>Property Leasing</h3>
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 3h7l3 3v15H7z"></path>
+									<path d="M14 3v4h4"></path>
+									<path d="M9 13h6"></path>
+									<path d="M9 17h6"></path>
+								</svg>
+							</div>
+						</div>						
 						<p>We connect landlords and tenants by managing rental listings, tenant screening, lease agreements, and ongoing property management for a smooth leasing experience.</p>
-						    <a href="pages/listings.html?type=res&deal=lease">
-                                 View Details
-                            </a>					
+						<a href="pages/listings.html?type=res&deal=lease">View Details</a>
 					</article>
 
 					<article>
-						<h3>Property Valuation</h3>
+						<span class="card-num">03</span>
+						  <div class="card-header">
+							<h3>Property Valuation</h3>
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 19V5"></path>
+									<path d="M4 19h16"></path>
+									<path d="M7 15l3-4 4 3 5-6"></path>
+									<circle cx="7" cy="15" r="1"></circle>
+									<circle cx="10" cy="11" r="1"></circle>
+									<circle cx="14" cy="14" r="1"></circle>
+									<circle cx="19" cy="8" r="1"></circle>
+								</svg>
+							</div>
+						</div>					
 						<p>We provide accurate property valuations based on current market trends, location analysis, and property condition to help you make informed financial decisions.</p>
-						    <a href="pages/valuation.html">
-                                 View Details
-                            </a>					
+						<a href="pages/valuation.html">View Details</a>
 					</article>
+
 				</div>
 			</section>
 
-
 			<!-- Contact CTA -->
 			<section id="contact-cta">
-				<h2>Need Property Assistance?</h2>
 
-				<p>Speak with our team today for expert help with buying, selling, leasing, property valuation, and consultancy services.</p>
-				
+				<div class="contact-intro">
+					<h2>Need Property Assistance?</h2>
+					<p>Speak with our team today for expert help with buying, selling, leasing, property valuation, and consultancy services.</p>
+				</div>
+
 				<div class="contact-row">
 
-					<!-- Contact Form -->
 					<div class="contact-form" id="contact-form">
 						<h3>Send Us a Message</h3>
 
 						<form>
 							<label for="name">Your Name</label>
-							<input type="text" id="name" name="name" required>
+							<input type="text" id="name" name="name" placeholder="Enter Your Name" required/>
 
 							<label for="email">Your Email</label>
-							<input type="email" id="email" name="email" required>
+							<input type="email" id="email" name="email" placeholder="Enter Your Email" required/>
 							
 							<label for="message">Your Message</label>
-							<textarea id="message" name="message" rows="5" required></textarea>
+							<textarea id="message" name="message" rows="5" placeholder="Write Your Message To Our Team Here" required></textarea>
 
 							<button type="submit">Submit</button>
 						</form>
 					</div>
 
-					<!-- Contact Info -->
 					<div class="contact-info">
 						<h3>Get in Touch</h3>
 
@@ -246,41 +325,97 @@
 					</div>
 
 				</div>
-				
 			</section>
 
+			<!-- Reviews -->
 			<section id="customer-reviews">
-				
-				<h2>Trsuted Customer Reviews</h2>
+
+				<div class="reviews-header">
+					<h2>Trusted Customer Reviews</h2>
+				</div>
 
 				<div class="reviews-track">
 
 					<blockquote>
+						<span class="review-stars">★★★★★</span>
 						<p>
 							“Selling my house was made very easy by this team. They guided me through every step,
 							explained the market clearly, and secured a great price faster than I expected.”
 						</p>
-						<small><strong>Tawanda M.</strong> – Property Sale</small>
+						<div class="reviewer">
+							<span class="reviewer-name">Tawanda M.</span>
+							<span class="reviewer-role">Property Sale</span>
+						</div>
 					</blockquote>
 
 					<blockquote>
+						<span class="review-stars">★★★★★</span>
 						<p>
 							“I was looking for a rental property and they quickly found me a perfect home.
 							The process was smooth, professional, and stress-free.”
 						</p>
-						<small><strong>Nyasha K.</strong> – Property Lease</small>
+						<div class="reviewer">
+							<span class="reviewer-name">Nyasha K.</span>
+							<span class="reviewer-role">Property Lease</span>
+						</div>
 					</blockquote>
 
 					<blockquote>
+						<span class="review-stars">★★★★★</span>
 						<p>
 							“Very reliable service when it comes to leasing. They understood exactly what I needed
 							and helped me secure a good rental agreement without delays.”
 						</p>
-						<small><strong>Rudo T.</strong> – Property Lease</small>
+						<div class="reviewer">
+							<span class="reviewer-name">Rudo T.</span>
+							<span class="reviewer-role">Property Lease</span>
+						</div>
+					</blockquote>
+					<blockquote>
+						<span class="review-stars">★★★★★</span>
+						<p>
+							“The team made the entire process smooth and stress-free. They were responsive,
+							transparent, and guided me through every step of securing my new home.”
+						</p>
+						<div class="reviewer">
+							<span class="reviewer-name">Tariro M.</span>
+							<span class="reviewer-role">Tenant Support</span>
+						</div>
 					</blockquote>
 
-				</div>
+					<blockquote>
+						<span class="review-stars">★★★★★</span>
+						<p>
+							“Excellent customer service from start to finish. I appreciated how quickly they
+							handled my queries and found options that matched my budget and preferences.”
+						</p>
+						<div class="reviewer">
+							<span class="reviewer-name">Munashe K.</span>
+							<span class="reviewer-role">Rental Services</span>
+						</div>
+					</blockquote>
 
+					<blockquote>
+						<span class="review-stars">★★★★★</span>
+						<p>
+							“Professional and efficient. I was able to secure a lease agreement much faster
+							than expected, and everything was clearly explained along the way.”
+						</p>
+						<div class="reviewer">
+							<span class="reviewer-name">Chipo D.</span>
+							<span class="reviewer-role">Property Leasing</span>
+						</div>
+					</blockquote>
+				</div>
+				<div class="reviews-controls">
+					<button type="button" aria-label="Previous review">
+						Prev
+					</button>
+
+					<button type="button" aria-label="Next review">
+						Next
+					</button>
+				</div>
 			</section>
 
 		</main>
@@ -322,30 +457,30 @@
 			</div>
 
 		</footer>
+
 		<script>
-		let lastScrollY = window.scrollY;
-		const header = document.querySelector("header");
+			let lastScrollY = window.scrollY;
+			const header = document.querySelector("header");
 
-		window.addEventListener("scroll", () => {
-			const currentScrollY = window.scrollY;
+			window.addEventListener("scroll", () => {
+				const currentScrollY = window.scrollY;
 
-			// shadow effect after slight scroll
-			if (currentScrollY > 50) {
-				header.classList.add("scrolled");
-			} else {
-				header.classList.remove("scrolled");
-			}
+				if (currentScrollY > 50) {
+					header.classList.add("scrolled");
+				} else {
+					header.classList.remove("scrolled");
+				}
 
-			// hide/show logic
-			if (currentScrollY > lastScrollY && currentScrollY > 100) {
-				header.classList.add("hide"); // scrolling down
-			} else {
-				header.classList.remove("hide"); // scrolling up
-			}
+				if (currentScrollY > lastScrollY && currentScrollY > 100) {
+					header.classList.add("hide");
+				} else {
+					header.classList.remove("hide");
+				}
 
-			lastScrollY = currentScrollY;
-		});
+				lastScrollY = currentScrollY;
+			});
 		</script>
-		<script src="js/landing.js" ></script>
+
+		<script src="js/landing.js"></script>
 	</body>
 </html>
