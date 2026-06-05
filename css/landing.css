@@ -1,6 +1,6 @@
 /* HERO SECTION */
 #hero {
-  height: 50vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -22,13 +22,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.20);
 }
 
 /* Keep content above overlay */
 #hero h1,
 #hero p,
-#hero button {
+#hero button,
+#hero .search-pill {
   position: relative;
   z-index: 1;
 }
@@ -49,7 +50,106 @@
   line-height: 1.6;
   opacity: 0.9;
 }
+/* Search pill container */
+.search-pill {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  max-width: fit-content;
+}
 
+/* Form styling */
+.pill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #FFFFFF;
+  padding: 20px 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  width: 100%;
+}
+
+/* Inputs & selects */
+.pill select,
+.pill input {
+  border: 1px solid #e6e6e6;
+  background: #FFFFFF;
+  color: #111111;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+  min-width: 160px;
+}
+
+/* Focus state */
+.pill select:focus,
+.pill input:focus {
+  border-color: #B3954D;
+  box-shadow: 0 0 0 3px rgba(179, 149, 77, 0.2);
+}
+
+/* Placeholder styling */
+.pill input::placeholder {
+  color: #999999;
+}
+
+/* Button styling */
+.pill button {
+  background: #000000;
+  color: #FFFFFF;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+/* Button hover */
+.pill button:hover {
+  background: #B3954D;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Optional: subtle active click effect */
+.pill button:active {
+  transform: translateY(0);
+}
+
+/* Remove default select arrow styling (optional modern touch) */
+.pill select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23111111'%3E%3Cpath d='M6 9L0 3h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px;
+  padding-right: 32px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .pill {
+    border-radius: 20px;
+  }
+
+  .pill select,
+  .pill input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .pill button {
+    width: 100%;
+  }
+}
 /* Buttons container effect (optional spacing) */
 #hero button {
   margin: 8px;

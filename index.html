@@ -70,17 +70,66 @@
 
 			<!-- Hero -->
 			<section id="hero">
-				<h1>Professional Property Solutions</h1>
+				<h1>Innovative Property Solutions</h1>
 
 				<p>
 					Sales, Leasing and Valuation Services for
 					Commercial, Residential and Industrial Properties.
 				</p>
 
-				<button onclick="window.location.href='pages/listings.html?type=res&deal=sale'">
-					Browse Properties
-				</button>
+				<div class="search-pill">
+					<form action="/pages/listings.html" method="GET" class="pill">
 
+						<!-- Listing Type -->
+						<select id="listing_type" name="listing_type">
+						<option value="sale">For Sale</option>
+						<option value="rent">To Rent</option>
+						</select>
+
+						<!-- Property Type -->
+						<select id="property_type" name="property_type">
+						<option value="">Property Type</option>
+
+						<optgroup label="Land">
+							<option value="residential-land">Residential Land</option>
+							<option value="commercial-land">Commercial Land</option>
+							<option value="industrial-land">Industrial Land</option>
+							<option value="agricultural-land">Agricultural / Farms</option>
+						</optgroup>
+
+						<optgroup label="Built Property">
+							<option value="residential">Residential</option>
+							<option value="commercial">Commercial</option>
+							<option value="industrial">Industrial</option>
+						</optgroup>
+						</select>
+
+						<!-- Location -->
+						<input
+						id="location"
+						type="text"
+						name="location"
+						placeholder="Enter location"
+						autocomplete="address-level2"
+						>
+
+						<!-- Max Price  -->
+						<input
+						id="max_price"
+						type="number"
+						name="max_price"
+						placeholder="Max price (USD)"
+						min="0"
+						step="1"
+						>
+
+						<!-- Search -->
+						<button type="submit">
+						Search
+						</button>
+
+					</form>
+				</div>
 				<button onclick="window.location.href='pages/valuation.html'">
 					Request For Valuation
 				</button>				
@@ -297,5 +346,6 @@
 			lastScrollY = currentScrollY;
 		});
 		</script>
+		<script src="js/landing.js" ></script>
 	</body>
 </html>
