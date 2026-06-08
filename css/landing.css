@@ -192,17 +192,16 @@
   z-index: 0;
 }
 
-/* Multi-layer overlay: dark gradient + vignette */
 #hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 30%, rgba(17,17,17,0.55) 100%),
-    linear-gradient(175deg,
-      rgba(17,17,17,0.48) 0%,
-      rgba(17,17,17,0.22) 45%,
-      rgba(17,17,17,0.72) 100%
+    radial-gradient(
+      ellipse at center,
+      rgba(17,17,17,0.55) 0%,
+      rgba(17,17,17,0.35) 35%,
+      rgba(17,17,17,0) 70%
     );
   z-index: 1;
 }
