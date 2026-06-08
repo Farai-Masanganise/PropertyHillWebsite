@@ -70,14 +70,38 @@
             <!-- Page Hero -->
             <section id="page-hero">
 
+                <div class="page-hero-inner"></div>
+
+                <span class="page-hero-eyebrow">Premium Properties</span>
+
                 <h1>Property Listings</h1>
 
                 <p>
                     Browse commercial, residential and industrial
                     properties available for sale or lease.
                 </p>
+                <span class="page-hero-rule"></span></div>
 
             </section>
+
+                <!--toolbar -->
+                <div class="listings-toolbar">
+                    <p class="toolbar-count"><strong>12</strong> properties found</p>
+                    <div class="toolbar-right">
+                        <div class="toolbar-sort">
+                        <label>Sort by</label>
+                        <select><option>Newest</option><option>Price: Low–High</option><option>Price: High–Low</option></select>
+                        </div>
+                        <div class="view-toggle">
+                        <button data-view="grid" class="active" title="Grid view">
+                            <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+                        </button>
+                        <button data-view="list" title="List view">
+                            <svg viewBox="0 0 16 16"><rect x="1" y="2" width="14" height="3"/><rect x="1" y="7" width="14" height="3"/><rect x="1" y="12" width="14" height="3"/></svg>
+                        </button>
+                        </div>
+                    </div>
+                </div>
 
             <!-- Main Content -->
             <section id="listings-layout">
@@ -85,7 +109,10 @@
                 <!-- Sidebar -->
                 <aside id="filters">
 
-                    <h2>Filter Properties</h2>
+                    <div class="filter-header">
+                        <h2>Filters</h2>
+                        <a href="#" class="filter-reset">Clear all</a>
+                    </div>
 
                     <!-- Search -->
                     <div class="filter-group">
@@ -102,21 +129,17 @@
 
                     </div>
 
-                    <button>
-                        Apply Filters
-                    </button>
-
                     <!-- Transaction -->
                     <div class="filter-group">
 
-                        <h3>Transaction</h3>
+                        <h3 class="filter-section-title">Transaction</h3>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="sales">
                             Sales
                         </label>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="leasing">
                             Leasing
                         </label>
@@ -126,19 +149,19 @@
                     <!-- Property Type -->
                     <div class="filter-group">
 
-                        <h3>Property Type</h3>
+                        <h3 class="filter-section-title">Property Type</h3>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="commercial">
                             Commercial
                         </label>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="residential">
                             Residential
                         </label>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="industrial">
                             Industrial
                         </label>
@@ -148,14 +171,14 @@
                     <!-- Development -->
                     <div class="filter-group">
 
-                        <h3>Category</h3>
+                        <h3 class="filter-section-title">Category</h3>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="land">
                             Land / Stands
                         </label>
 
-                        <label>
+                        <label class="check-label">
                             <input type="checkbox" value="built">
                             Built / Developed
                         </label>
@@ -165,18 +188,23 @@
                     <!-- Price -->
                     <div class="filter-group">
 
-                        <h3>Price Range</h3>
+                        <h3 class="filter-section-title">Price Range</h3>
+                        <div class="price-range">
+                            <input
+                                type="number"
+                                placeholder="Minimum"
+                            >
+                        </div>
+                        <div class="price-range">
+                            <input
+                                type="number"
+                                placeholder="Maximum"
+                            >
+                        </div>
+                    </div>
 
-                        <input
-                            type="number"
-                            placeholder="Minimum"
-                        >
-
-                        <input
-                            type="number"
-                            placeholder="Maximum"
-                        >
-
+                    <div class="filter-actions">
+                        <button>Apply Filters</button>
                     </div>
 
                 </aside>
@@ -187,108 +215,6 @@
                     <h2>Available Properties</h2>
 
                     <div class="property-grid">
-
-                        <!-- Card 1 -->
-                        <article class="property-card">
-
-                            <img
-                                src="assets/images/property1.jpg"
-                                alt="Property"
-                            >
-
-                            <div class="card-content">
-
-                                <h3>
-                                    Commercial Stand
-                                </h3>
-
-                                <p>
-                                    Harare CBD
-                                </p>
-
-                                <p>
-                                    $85,000
-                                </p>
-
-                                <p>
-                                    Commercial • Land
-                                </p>
-
-                                <a href="property.html?id=1">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                        <!-- Card 2 -->
-                        <article class="property-card">
-
-                            <img
-                                src="assets/images/property2.jpg"
-                                alt="Property"
-                            >
-
-                            <div class="card-content">
-
-                                <h3>
-                                    Residential House
-                                </h3>
-
-                                <p>
-                                    Borrowdale
-                                </p>
-
-                                <p>
-                                    $220,000
-                                </p>
-
-                                <p>
-                                    Residential • Built
-                                </p>
-
-                                <a href="property.html?id=2">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                        <!-- Card 3 -->
-                        <article class="property-card">
-
-                            <img
-                                src="assets/images/property3.jpg"
-                                alt="Property"
-                            >
-
-                            <div class="card-content">
-
-                                <h3>
-                                    Industrial Warehouse
-                                </h3>
-
-                                <p>
-                                    Msasa
-                                </p>
-
-                                <p>
-                                    $450,000
-                                </p>
-
-                                <p>
-                                    Industrial • Built
-                                </p>
-
-                                <a href="property.html?id=3">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </article>
 
                     </div>
 

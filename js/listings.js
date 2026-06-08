@@ -72,25 +72,23 @@ function renderProperties(properties) {
 
   container.innerHTML = properties.map(p => `
     <article class="property-card">
-
-      <img src="${p.images?.[0] || 'assets/images/placeholder.jpg'}" alt="Property">
-
-      <div class="card-content">
-
-        <h3>${p.title}</h3>
-
-        <p>${p.location}</p>
-
-        <p>$${Number(p.price).toLocaleString()}</p>
-
-        <p>${p.type} • ${p.category}</p>
-
-        <a href="property.html?id=${p.id}&type=${getTypeCode(p.type)}&deal=${getDealCode(p.deal)}">
-          View Details
-        </a>
-
+      <div class="card-image-wrap">
+        <img src="${p.images?.[0] || '../assets/images/placeholder.jpg'}" alt="${p.title}">
+        <div class="card-overlay">
+          <a class="overlay-cta" href="property.html?id=${p.id}&type=${getTypeCode(p.type)}&deal=${getDealCode(p.deal)}">View Property</a>
+        </div>
+        <span class="card-badge ${p.deal === 'Lease' ? 'for-rent' : ''}">${p.deal === 'Lease' ? 'For Rent' : 'For Sale'}</span>
       </div>
-
+      <div class="card-content">
+        <div class="card-location">${p.location}</div>
+        <h3>${p.title}</h3>
+        <div class="card-price">$${Number(p.price).toLocaleString()}</div>
+        <div class="card-stats">
+          <span class="card-stat">${p.type}</span>
+          <span class="card-stat">${p.category}</span>
+        </div>
+        <a href="property.html?id=${p.id}&type=${getTypeCode(p.type)}&deal=${getDealCode(p.deal)}">View Details</a>
+      </div>
     </article>
   `).join("");
 }
@@ -194,3 +192,49 @@ async function filterListings() {
   });
 
 }
+
+//═══════════════════════════════════
+//   SCROLL-REVEAL JS SNIPPET
+//═══════════════════════════════════
+  (function () {
+    // Scroll-reveal for .reveal elements
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.10, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // View toggle (grid ↔ list)
+    const gridBtn = document.querySelector('[data-view="grid"]');
+    const listBtn = document.querySelector('[data-view="list"]');
+    const panel   = document.getElementById('properties');
+    if (gridBtn && listBtn && panel) {
+      gridBtn.addEventListener('click', () => {
+        panel.classList.remove('list-view');
+        gridBtn.classList.add('active');
+        listBtn.classList.remove('active');
+      });
+      listBtn.addEventListener('click', () => {
+        panel.classList.add('list-view');
+        listBtn.classList.add('active');
+        gridBtn.classList.remove('active');
+      });
+    }
+
+    // Collapsible mobile filter
+    const filterHeader = document.querySelector('.filter-header');
+    const filterPanel  = document.getElementById('filters');
+    if (filterHeader && filterPanel && window.innerWidth < 900) {
+      filterHeader.style.cursor = 'pointer';
+      filterHeader.addEventListener('click', () => {
+        filterPanel.classList.toggle('collapsed');
+      });
+    }
+  })();

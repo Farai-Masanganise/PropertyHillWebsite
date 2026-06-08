@@ -1,216 +1,1070 @@
-/* =========================
-   GLOBAL / BASE STYLES
-========================= */
+/* ══════════════════════════════════════════════════════════════
+   LUXURY REAL ESTATE — LISTINGS PAGE CSS
+   Palette: #FFFFFF · #111111 · #B3954D · #B28419
+   Fonts:   Cormorant Garamond (display) · Jost (body)
 
+   Assumes luxury-realestate.css (home page) is also loaded
+   for :root tokens, @keyframes, and .reveal utilities.
+   If this is a standalone file, the tokens block below is
+   self-contained — you can remove the duplicate :root from
+   the home CSS when both files are loaded together.
+
+   ⚠  HTML NOTES — small structural additions needed:
+   1.  .property-card img → wrap in <div class="card-image-wrap">
+   2.  Add <div class="card-overlay"> inside .card-image-wrap
+   3.  Add <span class="card-badge">For Sale</span> inside .card-image-wrap
+   4.  Add <div class="card-price">$1,250,000</div> in .card-content
+   5.  Add <div class="card-stats"> with spans for beds/baths/sqm
+   6.  Add <div class="card-location"> above card title
+   7.  Wrap #page-hero text in <div class="page-hero-inner">
+   8.  Add <div class="listings-toolbar"> between #page-hero and the grid
+   9.  Add class="filter-section-title" on each filter group h3
+   10. Wrap filter checkboxes in <label class="check-label">
+   JS snippet for scroll-reveal at bottom of file.
+══════════════════════════════════════════════════════════════ */
+
+/* ── FONT IMPORT ─────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+
+/* ── DESIGN TOKENS (skip duplicate :root if home CSS loads first) */
+:root {
+  --gold:          #B3954D;
+  --gold-dark:     #B28419;
+  --gold-subtle:   rgba(179, 149, 77, 0.10);
+  --gold-border:   rgba(179, 149, 77, 0.28);
+  --black:         #111111;
+  --white:         #FFFFFF;
+  --off-white:     #F7F5F1;
+  --muted:         #6B6B6B;
+  --muted-light:   #AAAAAA;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  --shadow-sm:   0 2px 16px rgba(17, 17, 17, 0.06);
+  --shadow-md:   0 8px 40px rgba(17, 17, 17, 0.10);
+  --shadow-lg:   0 20px 70px rgba(17, 17, 17, 0.14);
+  --shadow-gold: 0 8px 32px rgba(179, 149, 77, 0.28);
+
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── KEYFRAMES (self-contained) ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(44px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 56px; opacity: 1; }
+}
+/* Skeleton shimmer for loading state */
+@keyframes skeletonShimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+/* ── SCROLL-REVEAL UTILITY (duplicated from home CSS) ────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.9s var(--ease-luxury),
+              transform 0.9s var(--ease-luxury);
+}
+.reveal.from-left  { transform: translateX(-50px); }
+.reveal.from-right { transform: translateX( 50px); }
+.reveal.in-view    { opacity: 1; transform: translate(0, 0); }
+.reveal.delay-1    { transition-delay: 0.10s; }
+.reveal.delay-2    { transition-delay: 0.20s; }
+.reveal.delay-3    { transition-delay: 0.30s; }
+.reveal.delay-4    { transition-delay: 0.40s; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   §1  BASE / GLOBAL
+══════════════════════════════════════════════════════════════ */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #111;
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+* { box-sizing: border-box; }
 
-* {
-    box-sizing: border-box;
-}
 
-/* =========================
-   PAGE HERO
-========================= */
-
+/* ══════════════════════════════════════════════════════════════
+   §2  PAGE HERO — editorial header, no background image
+══════════════════════════════════════════════════════════════ */
 #page-hero {
-    text-align: center;
-    padding: 20px 20px;
-    background: #fff;
-    margin-top: 60px;
+  text-align: center;
+  padding: 80px 40px 60px;
+  background: var(--white);
+  margin-top: 60px;    /* height of fixed nav */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background watermark */
+#page-hero::before {
+  content: "LISTINGS";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 18vw;
+  font-weight: 700;
+  color: rgba(179, 149, 77, 0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.12em;
+}
+
+/* Gold top accent bar */
+#page-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--gold) 25%,
+    var(--gold-dark) 75%,
+    transparent 100%
+  );
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1s 0.1s var(--ease-luxury) both;
+}
+
+/* Eyebrow */
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.page-hero-eyebrow::before,
+.page-hero-eyebrow::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
 }
 
 #page-hero h1 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--black);
+  margin: 0 0 18px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+#page-hero h1 em {
+  font-style: italic;
+  color: var(--gold);
 }
 
 #page-hero p {
-    font-size: 16px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* Gold rule under hero */
+.page-hero-rule {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  margin: 32px auto 0;
+  animation: drawLine 1s 0.5s var(--ease-luxury) both;
+}
 
+
+/* ══════════════════════════════════════════════════════════════
+   §3  LISTINGS TOOLBAR — results count + sort + view toggle
+══════════════════════════════════════════════════════════════ */
+.listings-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 40px;
+  background: var(--white);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.07);
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.toolbar-count {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.toolbar-count strong {
+  font-weight: 700;
+  color: var(--black);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Sort dropdown */
+.toolbar-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toolbar-sort label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.toolbar-sort select {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--black);
+  border: none;
+  border-bottom: 1px solid #D4D0C8;
+  border-radius: 0;
+  background: transparent;
+  padding: 4px 20px 4px 0;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='%23B3954D'%3E%3Cpath d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 8px;
+}
+
+/* Grid / List view toggle */
+.view-toggle {
+  display: flex;
+  gap: 4px;
+}
+.view-toggle button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #E2DFDA;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--muted-light);
+  transition: all 0.3s ease;
+  padding: 0;
+  border-radius: 0;
+}
+.view-toggle button.active,
+.view-toggle button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-subtle);
+}
+/* SVG icons inline for the toggle — example grid icon */
+.view-toggle button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+@media (max-width: 576px) {
+  .listings-toolbar { padding: 16px 20px; top: 60px; }
+  .toolbar-right { gap: 12px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §4  MAIN LAYOUT — sidebar + listings content
+══════════════════════════════════════════════════════════════ */
 #listings-layout {
-    display: flex;
-    gap: 30px;
-    padding: 40px;
-    align-items: flex-start;
-    background: #fff;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  padding: 48px 40px;
+  align-items: start;
+  background: var(--off-white);
+  min-height: 80vh;
 }
 
-/* =========================
-   SIDEBAR FILTERS
-========================= */
 
+/* ══════════════════════════════════════════════════════════════
+   §5  SIDEBAR FILTERS
+══════════════════════════════════════════════════════════════ */
 #filters {
-    width: 280px;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
+  background: var(--white);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-top: 3px solid var(--gold);
+  position: sticky;
+  top: 120px;    /* clears the sticky toolbar */
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: var(--shadow-sm);
+  animation: slideLeft 0.9s 0.1s var(--ease-luxury) both;
+}
+#filters::-webkit-scrollbar { display: none; }
+
+/* Filter panel header */
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid rgba(17,17,17,0.07);
 }
 
 #filters h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #111;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--black);
+  margin: 0;
 }
 
+/* Clear / reset link */
+.filter-reset {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-border);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.filter-reset:hover {
+  color: var(--gold-dark);
+  border-bottom-color: var(--gold-dark);
+}
+
+/* Each filter group */
 .filter-group {
-    margin-bottom: 20px;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(17,17,17,0.06);
+}
+.filter-group:last-child {
+  border-bottom: none;
+  padding-bottom: 28px;
 }
 
+/* Group label */
+.filter-section-title,
 .filter-group h3 {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #333;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
 }
 
+/* ── Custom checkbox / radio ────────────────────────────────── */
+.check-label,
 .filter-group label {
-    display: flex;
-    gap: 8px;
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 6px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--black);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  line-height: 1.3;
+}
+.check-label:hover { color: var(--gold); }
+.check-label:last-child { margin-bottom: 0; }
+
+/* Hide native input */
+.check-label input[type="checkbox"],
+.check-label input[type="radio"],
+.filter-group label input[type="checkbox"],
+.filter-group label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #C8C4BC;
+  border-radius: 0;
+  background: var(--white);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+/* Checked state */
+.check-label input[type="checkbox"]:checked,
+.filter-group label input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+/* Checkmark via pseudo */
+.check-label input[type="checkbox"]:checked::after,
+.filter-group label input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: 2px solid var(--white);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+/* Radio circle */
+.check-label input[type="radio"],
+.filter-group label input[type="radio"] {
+  border-radius: 50%;
+}
+.check-label input[type="radio"]:checked,
+.filter-group label input[type="radio"]:checked {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: inset 0 0 0 4px var(--gold);
 }
 
-/* INPUTS */
+/* ── Text / number inputs ─────────────────────────────────── */
 #filters input[type="text"],
 #filters input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid #D4D0C8;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--black);
+  outline: none;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
-
+#filters input[type="text"]::placeholder,
+#filters input[type="number"]::placeholder {
+  color: var(--muted-light);
+  font-weight: 300;
+}
 #filters input:focus {
-    border-color: #B3954D;
+  border-bottom-color: var(--gold);
+  box-shadow: 0 2px 0 0 var(--gold);
 }
 
-/* FILTER BUTTON */
-#filters button {
-    width: 100%;
-    padding: 12px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* Price range row */
+.price-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.price-range input {
+  width: 100%;
 }
 
-#filters button:hover {
-    background: #B3954D;
+/* Range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, #E0DDD7 0%);
+  border-radius: 0;
+  outline: none;
+  margin-top: 14px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--gold);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  cursor: pointer;
 }
 
-/* =========================
-   PROPERTY LISTINGS
-========================= */
+/* ── Filter apply button ────────────────────────────────────── */
+.filter-actions {
+  padding: 0 28px 28px;
+}
 
+#filters button,
+.filter-apply {
+  width: 100%;
+  padding: 15px;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s var(--ease-luxury);
+}
+#filters button:hover,
+.filter-apply:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §6  PROPERTIES PANEL — heading + grid
+══════════════════════════════════════════════════════════════ */
 #properties {
-    flex: 1;
+  flex: 1;
 }
 
 #properties h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #111;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--black);
+  margin: 0 0 28px;
 }
+#properties h2 em { font-style: italic; color: var(--gold); }
 
-/* GRID */
+
+/* ══════════════════════════════════════════════════════════════
+   §7  PROPERTY GRID
+══════════════════════════════════════════════════════════════ */
 .property-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-/* =========================
-   PROPERTY CARD
-========================= */
+/* List-view override — toggled by JS adding .list-view to #properties */
+#properties.list-view .property-grid {
+  grid-template-columns: 1fr;
+}
+#properties.list-view .property-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+#properties.list-view .card-image-wrap {
+  height: 100%;
+  min-height: 220px;
+}
+#properties.list-view .card-image-wrap img {
+  height: 100%;
+}
+#properties.list-view .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 36px;
+}
 
+
+/* ══════════════════════════════════════════════════════════════
+   §8  PROPERTY CARD
+══════════════════════════════════════════════════════════════ */
 .property-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: 0.3s ease;
+  background: var(--white);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.55s var(--ease-luxury),
+              box-shadow 0.55s var(--ease-luxury);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  animation: fadeUp 0.7s var(--ease-luxury) both;
+}
+
+/* Stagger card entrance animations */
+.property-card:nth-child(1) { animation-delay: 0.05s; }
+.property-card:nth-child(2) { animation-delay: 0.13s; }
+.property-card:nth-child(3) { animation-delay: 0.21s; }
+.property-card:nth-child(4) { animation-delay: 0.29s; }
+.property-card:nth-child(5) { animation-delay: 0.37s; }
+.property-card:nth-child(6) { animation-delay: 0.45s; }
+
+/* Gold left accent bar — grows upward on hover */
+.property-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(0deg, var(--gold), var(--gold-dark));
+  transition: height 0.55s var(--ease-luxury);
+  z-index: 2;
 }
 
 .property-card:hover {
-    transform: translateY(-5px);
-    border-color: #B3954D;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-9px);
+  box-shadow: var(--shadow-md);
+}
+.property-card:hover::before {
+  height: 100%;
 }
 
-.property-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+/* ── Image wrapper ────────────────────────────────────────────
+   Wrap the <img> in <div class="card-image-wrap">
+   Add <div class="card-overlay"> and <span class="card-badge">
+   as siblings inside .card-image-wrap
+─────────────────────────────────────────────────────────────── */
+.card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
 }
 
-/* CARD CONTENT */
+.property-card img,
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-luxury);
+}
+/*
+  IMAGE SUGGESTION per card:
+  · Exterior shot of a luxury home — dramatic angle, golden-hour lighting.
+  · Aerial shot of a penthouse terrace with city panorama.
+  · Architect-designed minimalist villa with pool reflecting sky.
+  Alt examples: "Modern luxury villa exterior at dusk",
+                "Penthouse terrace with city view",
+                "Award-winning architect villa with infinity pool"
+*/
+.property-card:hover img,
+.property-card:hover .card-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* ── Hover overlay — slides up to reveal CTA ────────────────── */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.82) 0%,
+    rgba(17, 17, 17, 0.30) 55%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s var(--ease-luxury),
+              transform 0.45s var(--ease-luxury);
+}
+.property-card:hover .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay CTA link */
+.card-overlay a,
+.overlay-cta {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 10px 26px;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-overlay a:hover,
+.overlay-cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.card-overlay a::after,
+.overlay-cta::after {
+  content: "→";
+}
+
+/* ── Status badge — "For Sale" / "For Rent" / "Sold" ─────────── */
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--gold);
+  padding: 6px 14px;
+  z-index: 3;
+}
+.card-badge.for-rent   { background: var(--black); }
+.card-badge.sold       { background: var(--muted); }
+.card-badge.featured   {
+  background: var(--gold-dark);
+  top: 44px; /* stack below a primary badge */
+}
+
+/* ── Card content area ───────────────────────────────────────── */
 .card-content {
-    padding: 15px;
+  padding: 24px 22px 22px;
+  border-top: none;
+  position: relative;
 }
 
+/* Location line */
+.card-location {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-location::before {
+  content: "◈";  /* decorative pin stand-in */
+  font-size: 9px;
+}
+
+/* Property name */
 .card-content h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
-    color: #111;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--black);
+  margin: 0 0 10px;
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+.property-card:hover .card-content h3 {
+  color: var(--gold-dark);
 }
 
-.card-content p {
-    font-size: 14px;
-    color: #555;
-    margin: 4px 0;
+/* Price */
+.card-price {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 14px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.card-price sup {
+  font-size: 0.75em;
+  font-weight: 300;
+  vertical-align: super;
+  letter-spacing: 0;
+  color: var(--gold);
 }
 
-/* DETAILS LINK */
-.card-content a {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: 0.3s ease;
+/* General description */
+.card-content > p {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--muted);
+  margin: 0 0 16px;
+  line-height: 1.6;
 }
 
-.card-content a:hover {
-    color: #B3954D;
-    border-bottom: 2px solid #B3954D;
+/* ── Property stats bar (beds · baths · sqm) ────────────────── */
+.card-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(17,17,17,0.07);
+  margin-top: 16px;
+  padding-top: 14px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.card-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+/* Stat divider */
+.card-stat + .card-stat {
+  padding-left: 12px;
+  border-left: 1px solid rgba(17,17,17,0.08);
+}
+
+/* Icon for stats — pass inline SVG or use a character */
+.card-stat-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.card-stat-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.card-stat span:last-child {
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── Card details link ──────────────────────────────────────── */
+.card-content a:not(.overlay-cta) {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.35s ease, gap 0.35s ease;
+}
+.card-content a:not(.overlay-cta)::after {
+  content: "→";
+  transition: transform 0.35s ease;
+}
+.card-content a:not(.overlay-cta):hover {
+  color: var(--gold);
+  gap: 12px;
+}
+.card-content a:not(.overlay-cta):hover::after {
+  transform: translateX(4px);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §9  SKELETON LOADING CARDS
+   Add class="skeleton" to a .property-card while data loads.
+══════════════════════════════════════════════════════════════ */
+.property-card.skeleton {
+  pointer-events: none;
+  box-shadow: none;
+}
+.property-card.skeleton .card-image-wrap,
+.property-card.skeleton .card-content h3,
+.property-card.skeleton .card-price,
+.property-card.skeleton .card-stat,
+.property-card.skeleton .card-content > p {
+  background: linear-gradient(
+    90deg,
+    #F0EDE8 25%,
+    #E8E4DF 50%,
+    #F0EDE8 75%
+  );
+  background-size: 600px 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 0;
+  color: transparent;
+}
+.property-card.skeleton .card-image-wrap { height: 220px; }
+.property-card.skeleton::before { display: none; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   §10 LOAD MORE BUTTON
+   Place a <div class="load-more-wrap"> after .property-grid
+══════════════════════════════════════════════════════════════ */
+.load-more-wrap {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 42px;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid var(--black);
+  cursor: pointer;
+  transition: all 0.5s var(--ease-luxury);
+  text-decoration: none;
+}
+.load-more-btn::after {
+  content: "↓";
+  transition: transform 0.35s ease;
+}
+.load-more-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+.load-more-btn:hover::after {
+  transform: translateY(4px);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §11 NO RESULTS STATE
+══════════════════════════════════════════════════════════════ */
+.no-results {
+  text-align: center;
+  padding: 80px 40px;
+  grid-column: 1 / -1;
+}
+.no-results-icon {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold-border);
+  margin-bottom: 20px;
+}
+.no-results h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.no-results p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §12 RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  #listings-layout {
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+  }
+}
 
 @media (max-width: 900px) {
-    #listings-layout {
-        flex-direction: column;
-        padding: 20px;
-    }
+  #listings-layout {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+  }
 
-    #filters {
-        width: 100%;
-    }
+  #filters {
+    position: static;
+    max-height: none;
+    border-top-color: var(--gold);
+  }
+
+  /* Collapsible filter panel on mobile */
+  #filters.collapsed .filter-group,
+  #filters.collapsed .filter-actions {
+    display: none;
+  }
+
+  .property-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  /* Remove list-view on mobile */
+  #properties.list-view .property-card {
+    grid-template-columns: 1fr;
+  }
+  #properties.list-view .card-image-wrap {
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  #page-hero { padding: 60px 20px 40px; }
+  #page-hero h1 { font-size: 2.2rem; }
+
+  .listings-toolbar { flex-direction: column; align-items: flex-start; }
+
+  .property-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin: 0 auto;
+  }
 }
