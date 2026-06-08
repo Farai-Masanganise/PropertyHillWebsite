@@ -145,9 +145,6 @@ body {
   animation: fadeUp 1.1s 0.1s var(--ease) both;
 }
 
-/* Eyebrow — add manually or via JS if you like */
-.hero-summary .hero-content::before { /* see above */ }
-
 .hero-summary h1 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 6vw, 5rem);
@@ -247,16 +244,12 @@ body {
 .section-block > h2::after {
   content: "";
   display: block;
-  width: 0;
+  width: 80;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--gold-dark));
   margin: 20px auto 0;
   transition: width 1s var(--ease);
 }
-/* Trigger via JS .in-view — or just set statically */
-.section-block > h2.in-view::after,
-.section-block > h2 { /* fallback: always show */ }
-.section-block > h2::after { width: 80px; }  /* static draw */
 
 /* Dark-section overrides (Process) */
 .valuation-main > .section-block:nth-child(5) > h2 {

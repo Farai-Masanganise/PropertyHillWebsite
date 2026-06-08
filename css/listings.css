@@ -2,25 +2,6 @@
    LUXURY REAL ESTATE — LISTINGS PAGE CSS
    Palette: #FFFFFF · #111111 · #B3954D · #B28419
    Fonts:   Cormorant Garamond (display) · Jost (body)
-
-   Assumes luxury-realestate.css (home page) is also loaded
-   for :root tokens, @keyframes, and .reveal utilities.
-   If this is a standalone file, the tokens block below is
-   self-contained — you can remove the duplicate :root from
-   the home CSS when both files are loaded together.
-
-   ⚠  HTML NOTES — small structural additions needed:
-   1.  .property-card img → wrap in <div class="card-image-wrap">
-   2.  Add <div class="card-overlay"> inside .card-image-wrap
-   3.  Add <span class="card-badge">For Sale</span> inside .card-image-wrap
-   4.  Add <div class="card-price">$1,250,000</div> in .card-content
-   5.  Add <div class="card-stats"> with spans for beds/baths/sqm
-   6.  Add <div class="card-location"> above card title
-   7.  Wrap #page-hero text in <div class="page-hero-inner">
-   8.  Add <div class="listings-toolbar"> between #page-hero and the grid
-   9.  Add class="filter-section-title" on each filter group h3
-   10. Wrap filter checkboxes in <label class="check-label">
-   JS snippet for scroll-reveal at bottom of file.
 ══════════════════════════════════════════════════════════════ */
 
 /* ── FONT IMPORT ─────── */
