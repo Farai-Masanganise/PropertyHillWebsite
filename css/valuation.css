@@ -244,7 +244,7 @@ body {
 .section-block > h2::after {
   content: "";
   display: block;
-  width: 80;
+  width: 80px;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--gold-dark));
   margin: 20px auto 0;
