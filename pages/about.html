@@ -251,8 +251,9 @@
 
 						<article class="team-member">
 
-							<img src="images/team-member.jpg"
-								alt="Managing Director">
+							<div class="team-memeber-img">	
+								<img src="images/team-member.jpg" alt="Managing Director">
+							</div>	
 
 							<h3>Managing Director</h3>
 
@@ -266,8 +267,9 @@
 
 						<article class="team-member">
 
-							<img src="images/team-member.jpg"
-								alt="Registered Valuer">
+							<div class="team-memeber-img">	
+								<img src="images/team-member.jpg" alt="Registered Valuer">
+							</div>
 
 							<h3>Registered Valuer</h3>
 
@@ -280,8 +282,9 @@
 
 						<article class="team-member">
 
-							<img src="images/team-member.jpg"
-								alt="Property Consultant">
+							<div class="team-memeber-img">	
+								<img src="images/team-member.jpg" alt="Property Consultant">
+							</div>	
 
 							<h3>Property Consultant</h3>
 
@@ -313,6 +316,7 @@
 					</ul>
 
 				</div>
+				<span class="gold-bar"></span>
 			</section>
 
 		</main>
@@ -354,8 +358,44 @@
 					</a>
 				</p>
 			</div>
-
 		</footer>
-		<script src="../js/contact.js"></script>
+		<script>
+			let lastScrollY = window.scrollY;
+			const header = document.querySelector("header");
+
+			window.addEventListener("scroll", () => {
+				const currentScrollY = window.scrollY;
+
+				if (currentScrollY > 50) {
+					header.classList.add("scrolled");
+				} else {
+					header.classList.remove("scrolled");
+				}
+
+				if (currentScrollY > lastScrollY && currentScrollY > 100) {
+					header.classList.add("hide");
+				} else {
+					header.classList.remove("hide");
+				}
+
+				lastScrollY = currentScrollY;
+			});
+		</script>
+		<script>
+			(function () {
+				const observer = new IntersectionObserver(
+				function (entries) {
+					entries.forEach(function (e) {
+					if (e.isIntersecting) {
+						e.target.classList.add('in-view');
+						observer.unobserve(e.target);
+					}
+					});
+				},
+				{ threshold: 0.10, rootMargin: '0px 0px -30px 0px' }
+				);
+				document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+			})();
+		</script>
     </body>
 </html>
