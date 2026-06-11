@@ -1,130 +1,487 @@
+/* ══════════════════════════════════════════════════════════════
+   PROPERTYHILL REALTY — PORTFOLIO PAGE CSS
+   Palette: #FFFFFF · #111111 · #B3954D · #B28419
+   Fonts:   Cormorant Garamond (display) · Jost (body)
+══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --gold:        #B3954D;
+  --gold-dark:   #B28419;
+  --gold-subtle: rgba(179,149,77,0.10);
+  --gold-border: rgba(179,149,77,0.28);
+  --black:       #111111;
+  --white:       #FFFFFF;
+  --off-white:   #F7F5F1;
+  --muted:       #6B6B6B;
+  --muted-lt:    #AAAAAA;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  --shadow-sm:   0 2px 16px rgba(17,17,17,0.06);
+  --shadow-md:   0 8px 40px rgba(17,17,17,0.10);
+  --shadow-gold: 0 8px 32px rgba(179,149,77,0.28);
+  --ease:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Keyframes ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(44px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 56px; opacity: 1; }
+}
+@keyframes rotateSlow {
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes scrollHint {
+  0%   { transform: translateX(0);    opacity: 1;   }
+  60%  { transform: translateX(12px); opacity: 0.4; }
+  100% { transform: translateX(0);    opacity: 1;   }
+}
+
+/* ── Scroll-reveal ───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.reveal.from-left  { transform: translateX(-52px); }
+.reveal.from-right { transform: translateX( 52px); }
+.reveal.in-view    { opacity: 1; transform: translate(0,0); }
+.reveal.delay-1 { transition-delay: 0.12s; }
+.reveal.delay-2 { transition-delay: 0.26s; }
+
 body {
   margin: 0;
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
 }
-/* ---------- Layout ---------- */
-.portfolio {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+* { box-sizing: border-box; }
+
+main.portfolio { display: block; overflow-x: hidden; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   §1  HERO
+══════════════════════════════════════════════════════════════ */
+.portfolio .hero {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--black);
+  padding: 140px 40px 100px;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Rotating outer ring */
+.portfolio .hero::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 640px; height: 640px;
+  border-radius: 50%;
+  border: 1px solid rgba(179,149,77,0.09);
+  transform: translate(-50%,-50%);
+  animation: rotateSlow 80s linear infinite;
+  pointer-events: none;
+}
+/* Inner ring */
+.portfolio .hero::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(179,149,77,0.15);
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+
+.portfolio .hero > * { position: relative; z-index: 1; }
+
+/* Gold rule above heading */
+.portfolio .hero h1::before {
+  content: "";
+  display: block;
+  width: 56px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  margin: 0 auto 28px;
+  animation: drawLine 1s var(--ease) both;
+}
+
+.portfolio .hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+  animation: fadeUp 1.1s 0.15s var(--ease) both;
+}
+.portfolio .hero h1 em { font-style: italic; color: var(--gold); }
+
+.portfolio .hero p {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.78;
+  max-width: 580px;
+  margin: 0 auto;
+  letter-spacing: 0.03em;
+  animation: fadeUp 1.1s 0.30s var(--ease) both;
+}
+
+@media (max-width: 576px) {
+  .portfolio .hero { padding: 110px 24px 80px; min-height: 44vh; }
+  .portfolio .hero h1 { font-size: 2.4rem; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   §2  PORTFOLIO CATEGORY SECTIONS
+   Sections auto-numbered 01 / 02 / 03 via CSS counter
+══════════════════════════════════════════════════════════════ */
+main.portfolio { counter-reset: portfolio-counter; }
 
 .portfolio-category {
-    margin-bottom: 5rem;
+  padding: 110px 80px 100px;
+  position: relative;
+  overflow: hidden;
+  counter-increment: portfolio-counter;
 }
 
+/* Alternating backgrounds */
+.portfolio-category:nth-child(2) { background: var(--off-white); }
+.portfolio-category:nth-child(3) { background: var(--white);     }
+.portfolio-category:nth-child(4) { background: var(--off-white);     }
+
+/* ── Category ghost number watermark ────────────────────── */
+.portfolio-category::before {
+  content: counter(portfolio-counter, decimal-leading-zero);
+  position: absolute;
+  top: 50%; right: 60px;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 28vw;
+  font-weight: 700;
+  color: rgba(179,149,77,0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Category header ─────────────────────────────────────── */
 .category-header {
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 52px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(17,17,17,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+/* Gold left accent bar on the header */
+.category-header::before {
+  content: "";
+  position: absolute;
+  left: -80px; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
 }
 
 .category-header h2 {
-    margin-bottom: .5rem;
-    font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--black);
+  margin: 0;
+  line-height: 1.1;
 }
+.category-header h2 em { font-style: italic; color: var(--gold); }
 
 .category-header p {
-    color: #666;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--muted-lt);
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 6px;
 }
 
-/* ---------- Carousel ---------- */
 
+
+/* ══════════════════════════════════════════════════════════════
+   §3  PROJECT CAROUSEL
+══════════════════════════════════════════════════════════════ */
 .project-carousel {
-    display: flex;
-    gap: 1.5rem;
-    max-height: 50vh;
-    overflow-x: auto;
-    overflow-y: hidden;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  cursor: grab;
+  /* hide scrollbar — clean look */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.project-carousel::-webkit-scrollbar { display: none; }
+.project-carousel:active { cursor: grabbing; }
 
-    scroll-snap-type: x proximity;
-
-    padding-bottom: 1rem;
-
+/* Scroll-hint fade on right edge */
+.project-carousel::after {
+  content: "";
+  position: sticky;
+  right: 0;
+  flex: 0 0 60px;
+  background: linear-gradient(90deg, transparent, currentColor 90%);
+  opacity: 0.06;
+  pointer-events: none;
+  align-self: stretch;
 }
 
-.project-carousel::-webkit-scrollbar {
-    height: 10px;
-}
 
-.project-carousel::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 20px;
-}
-
-/* ---------- Cards ---------- */
-
+/* ══════════════════════════════════════════════════════════════
+   §4  PROJECT CARD
+══════════════════════════════════════════════════════════════ */
 .project-card {
-    flex: 0 0 380px;
+  flex: 0 0 auto;
+  width: 400px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid transparent;
+  scroll-snap-align: start;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.55s var(--ease),
+              border-color 0.45s ease,
+              box-shadow 0.55s var(--ease);
+}
 
-    background: white;
-    border-radius: 16px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.08);
-
-    scroll-snap-align: start;
-
-    transition: transform .25s ease;
+/* Gold growing left bar */
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 3px; height: 0;
+  background: linear-gradient(0deg, var(--gold), var(--gold-dark));
+  transition: height 0.55s var(--ease);
+  z-index: 2;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-9px);
+  border-top-color: var(--gold);
+  box-shadow: var(--shadow-md);
 }
+.project-card:hover::before { height: 100%; }
 
-/* ---------- Image ---------- */
 
+/* ── Image area ──────────────────────────────────────────── */
 .project-image {
-    height: 160px;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  height: 280px;
 }
 
+/*
+  IMAGE SUGGESTIONS per card:
+  · "borrowdale-brooke.jpg" — Exterior of a luxury gated estate at dusk,
+    manicured gardens, stone driveway. Alt: "Borrowdale Brooke luxury residence"
+  · "mandara-property.jpg" — Wide-angle shot of a large residential plot,
+    lush trees, established suburb. Alt: "Mandara residential development property"
+  · "avenues-apartment.jpg" — Modern apartment building exterior, Harare CBD
+    skyline in background. Alt: "Modern apartment building in Harare Avenues"
+  · "industrial-site.jpg" — Industrial warehouse complex, wide concrete apron,
+    high bay profile. Alt: "Industrial property Chitungwiza"
+*/
 .project-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease), filter 0.5s ease;
+  filter: grayscale(10%);
+}
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
 }
 
-/* ---------- Content ---------- */
+/* Hover overlay with CTA */
+.project-image::after {
+  content: "View Project  →";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(17,17,17,0.84) 0%,
+    rgba(17,17,17,0.38) 55%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 24px 28px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+.project-card:hover .project-image::after {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* ── Content area ────────────────────────────────────────── */
 .project-content {
-    padding: 1.25rem;
+  padding: 28px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+/* Location badge */
 .project-location {
-    display: inline-block;
-
-    font-size: .85rem;
-    font-weight: 600;
-
-    color: #2f7d32;
-
-    margin-bottom: .5rem;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.project-location::before {
+  content: "◈";
+  font-size: 9px;
 }
 
+/* Project title */
 .project-content h3 {
-    margin-bottom: .75rem;
-
-    font-size: 1.2rem;
-    line-height: 1.3;
+  font-family: var(--font-display);
+  font-size: 1.38rem;
+  font-weight: 500;
+  color: var(--black);
+  margin: 0;
+  line-height: 1.22;
+  transition: color 0.3s ease;
 }
+.project-card:hover .project-content h3 { color: var(--gold-dark); }
 
+/* Project description */
 .project-content p {
-    color: #555;
-    line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
 }
 
-/* ---------- Mobile ---------- */
+/* Gold separator between location and title */
+.project-content::before {
+  display: none; /* handled by gap */
+}
 
-@media (max-width: 768px) {
 
-    .project-card {
-        flex: 0 0 300px;
-    }
+/* ══════════════════════════════════════════════════════════════
+   §5  SCROLL DRAG — JS snippet for carousel dragging
+   Paste into your <script> tag or .js file.
+══════════════════════════════════════════════════════════════
 
-    .project-image {
-        height: 200px;
-    }
+<script>
+  document.querySelectorAll('.project-carousel').forEach(function (track) {
+    let isDown = false, startX, scrollLeft;
+    track.addEventListener('mousedown',  function (e) {
+      isDown = true;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener('mouseleave', function () { isDown = false; });
+    track.addEventListener('mouseup',    function () { isDown = false; });
+    track.addEventListener('mousemove',  function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX);
+    });
+  });
 
+  // Scroll-reveal
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    observer.observe(el);
+  });
+</script>
+
+══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════
+   §6  RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .portfolio-category {
+    padding: 80px 40px 70px;
+  }
+  .category-header::before {
+    left: -40px;
+  }
+  .project-card { width: 340px; }
+}
+
+@media (max-width: 576px) {
+  .portfolio-category {
+    padding: 60px 20px 52px;
+  }
+  .category-header::before {
+    display: none;
+  }
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .project-card {
+    width: 290px;
+  }
+  .project-image { height: 220px; }
+  .project-content { padding: 22px 22px 26px; }
 }

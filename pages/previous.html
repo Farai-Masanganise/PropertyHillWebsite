@@ -129,6 +129,46 @@
 
                     </article>
 
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/highlands-sale.jpg" alt="Highlands Property Sale">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Highlands, Harare
+                            </span>
+
+                            <h3>Luxury Home Sale</h3>
+
+                            <p>
+                                Successfully negotiated and concluded the sale of a modern luxury residence in the prestigious Highlands suburb.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/avondale-apartment-sale.jpg" alt="Avondale Apartment Sale">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Avondale, Harare
+                            </span>
+
+                            <h3>Apartment Sale</h3>
+
+                            <p>
+                                Facilitated the sale of a well-located 2-bedroom apartment ideal for young professionals and investors.
+                            </p>
+                        </div>
+
+                    </article>
+
                 </div>
             </section>
 
@@ -162,6 +202,65 @@
 
                     </article>
 
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/avondale-office-lease.jpg" alt="Avondale Office Lease">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Avondale, Harare
+                            </span>
+
+                            <h3>Commercial Office Lease</h3>
+
+                            <p>
+                                Secured a long-term lease agreement for modern office space in a prime commercial hub.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/groombridge-house-lease.jpg" alt="Groombridge House Lease">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Groombridge, Harare
+                            </span>
+
+                            <h3>Residential Lease</h3>
+
+                            <p>
+                                Successfully leased a spacious family home in a quiet and secure gated community.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/borrowdale-retail-lease.jpg" alt="Borrowdale Retail Lease">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Borrowdale, Harare
+                            </span>
+
+                            <h3>Retail Space Lease</h3>
+
+                            <p>
+                                Leased a high-visibility retail unit in a busy shopping district with strong foot traffic.
+                            </p>
+                        </div>
+
+                    </article>
                 </div>
             </section>
 
@@ -195,6 +294,65 @@
 
                     </article>
 
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/valuation-borrowdale.jpg" alt="Borrowdale Valuation">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Borrowdale Brooke, Harare
+                            </span>
+
+                            <h3>Residential Property Valuation</h3>
+
+                            <p>
+                                Conducted a detailed market valuation for a high-end residential property within a gated estate.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/valuation-industrial.jpg" alt="Industrial Property Valuation">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Msasa, Harare
+                            </span>
+
+                            <h3>Industrial Property Valuation</h3>
+
+                            <p>
+                                Completed valuation of a large industrial warehouse for investment and insurance purposes.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="images/valuation-commercial-cbd.jpg" alt="CBD Commercial Valuation">
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-location">
+                                Harare CBD
+                            </span>
+
+                            <h3>Commercial Building Valuation</h3>
+
+                            <p>
+                                Provided a comprehensive valuation report for a multi-storey commercial building in the central business district.
+                            </p>
+                        </div>
+
+                    </article>
                 </div>
             </section>
         </main>
@@ -275,6 +433,36 @@
                 );
                 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
             })();
+        </script>
+        <script>
+            document.querySelectorAll('.project-carousel').forEach(function (track) {
+                let isDown = false, startX, scrollLeft;
+                track.addEventListener('mousedown',  function (e) {
+                isDown = true;
+                startX = e.pageX - track.offsetLeft;
+                scrollLeft = track.scrollLeft;
+                });
+                track.addEventListener('mouseleave', function () { isDown = false; });
+                track.addEventListener('mouseup',    function () { isDown = false; });
+                track.addEventListener('mousemove',  function (e) {
+                if (!isDown) return;
+                e.preventDefault();
+                track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX);
+                });
+            });
+
+            // Scroll-reveal
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    observer.unobserve(e.target);
+                }
+                });
+            }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
+            document.querySelectorAll('.reveal').forEach(function (el) {
+                observer.observe(el);
+            });
         </script>
     </body>
 </html>
