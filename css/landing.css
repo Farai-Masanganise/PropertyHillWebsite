@@ -2,19 +2,7 @@
    LUXURY REAL ESTATE — FULL CSS REVAMP
    Palette: #FFFFFF · #111111 · #B3954D · #B28419
    Fonts: Cormorant Garamond (display) · Jost (body)
-
-   ⚠  HTML NOTES — a few small structural additions needed:
-   1. Wrap #hero body content in <div class="hero-content">
-   2. Wrap hero CTAs in <div class="hero-cta">
-   3. Add <span class="hero-eyebrow">Your Tagline Here</span> in hero
-   4. Add <div class="pill-divider"></div> between pill fields
-   5. Add <div class="pill-field"><label>…</label> + input/select</div>
-   6. In services cards add <span class="card-num">01</span>
-   7. Wrap about section in two columns: .about-image-wrap + .about-text
-   8. Wrap reviews section heading in <div class="reviews-header">
-   9. Add .review-stars, .reviewer, .reviewer-name, .reviewer-role spans
-   10. Add scroll-reveal JS snippet at the bottom of this file to your <script>
-
+  
    Full usage guide included in comments throughout.
 ══════════════════════════════════════════════════════════════ */
 
@@ -132,7 +120,7 @@
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 .section-eyebrow::before,
 .section-eyebrow::after {
@@ -153,7 +141,7 @@
   display: block;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--gold-dark));
-  margin: 0 auto 32px;
+  margin: 0 auto 16px;
   animation: drawLine 1.2s var(--ease-luxury) both;
 }
 .gold-divider.center { width: 56px; }
@@ -241,7 +229,7 @@
   letter-spacing: 0.38em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -264,7 +252,7 @@
   line-height: 1.07;
   letter-spacing: -0.01em;
   max-width: 950px;
-  margin: 0 0 26px;
+  margin: 0 0 20px;
   animation: fadeUp 1.1s 0.25s var(--ease-luxury) both;
 }
 
@@ -283,13 +271,14 @@
   line-height: 1.75;
   max-width: 560px;
   opacity: 0.86;
-  margin: 0 0 48px;
+  margin: 0 0 20px;
   animation: fadeUp 1.1s 0.42s var(--ease-luxury) both;
 }
 
 /* ── CTA Buttons ──────────────────────────────────────────── */
 .hero-cta {
   display: flex;
+  margin: 0 0 20;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
@@ -307,138 +296,225 @@
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.5s var(--ease-luxury);
-  margin: 0;
 }
 
 /* Primary — gold fill */
-#hero button:nth-of-type(1) {
+#hero button {
   background: var(--gold);
   color: var(--white);
   border-color: var(--gold);
 }
-#hero button:nth-of-type(1):hover {
+#hero button:hover {
   background: var(--gold-dark);
   border-color: var(--gold-dark);
-  transform: translateY(-3px);
   box-shadow: var(--shadow-gold);
 }
+.hero-cta button:hover {
+  transform: translateY(-8px);
+}
 
-/* ── Search Pill — floats at hero bottom ─────────────────── */
+/* ── Search Pill ─────────────────────────────────────────── */
+
 .search-pill {
   position: absolute;
   bottom: -100px;
-  transform: translateX(-50%);
-  z-index: 4;
   width: 90%;
-  max-width: 940px;
-  animation: fadeUp 1.1s 0.8s var(--ease-luxury) both;
+  animation: fadeUp 1s 0.8s var(--ease-luxury) both;
 }
 
 .pill {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  background: var(--white);
-  border-radius: 0;
+  align-items: center;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: var(--shadow-lg);
-  align-items: stretch;
-  border-bottom: 3px solid var(--gold);
+
+  max-height: 80px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Each field group: label + input stacked */
+/* Gold accent line */
+
+.pill::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}
+
+/* Fields */
+
 .pill-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   flex: 1;
-  min-width: 140px;
-  padding: 16px 22px;
-  border-right: 1px solid #EDEBE7;
-}
-.pill-field:last-of-type {
-  border-right: none;
+  min-width: 160px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  position: relative;
 }
 
-.pill-field label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 5px;
-  display: block;
+/* Divider */
+
+.pill-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(179,149,77,.35),
+    transparent
+  );
 }
+
+/* Inputs */
 
 .pill select,
 .pill input {
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 400;
-  color: var(--black);
+  width: 100%;
+
   border: none;
-  border-radius: 0;
   background: transparent;
   outline: none;
-  padding: 4px 0;
-  width: 100%;
-  transition: color 0.3s ease;
-  min-width: unset;
-}
-.pill select:focus,
-.pill input:focus {
-  color: var(--gold);
-  box-shadow: none;
-}
-.pill input::placeholder {
-  color: var(--muted-light);
-  font-weight: 300;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--black);
+
+  transition: all .35s ease;
 }
 
-/* Styled select arrow in gold */
+.pill input::placeholder {
+  color: var(--muted);
+}
+
+/* Focus */
+
+.pill-field:focus-within {
+  background: var(--gold-subtle);
+}
+
+.pill-field:focus-within select,
+.pill-field:focus-within input {
+  color: var(--black);
+}
+
+/* Custom Select */
+
 .pill select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='%23B3954D'%3E%3Cpath d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath fill='%23B3954D' d='M6 7L0 0h12z'/%3E%3C/svg%3E");
+
   background-repeat: no-repeat;
-  background-position: right 0 center;
-  background-size: 8px;
-  padding-right: 16px;
+  background-position: right center;
+  background-size: 10px;
+  padding-right: 22px;
   cursor: pointer;
 }
 
-/* Pill CTA button */
+/* Search Button */
+
 .pill button {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  border: none;
+
+  min-width: 190px;
+  height: 86px;
+
   background: var(--black);
   color: var(--white);
-  border: none;
-  padding: 0 36px;
-  border-radius: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  letter-spacing: .25em;
+  text-transform: uppercase;
+
   cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-height: 60px;
-  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    background .45s var(--ease-luxury),
+    transform .35s ease;
 }
+
+/* Gold sweep */
+
+.pill button::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255,255,255,.18) 50%,
+    transparent 75%
+  );
+
+  transform: translateX(-140%);
+}
+
 .pill button:hover {
   background: var(--gold);
   box-shadow: var(--shadow-gold);
-  transition: var(--ease-luxury);
-  transform: translateY(0px);
+}
+
+.pill button:hover::before {
+  transform: translateX(140%);
+  transition: transform .9s ease;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .search-pill {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+
+    margin: 2rem auto 0;
+  }
+
+  .pill {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .pill-divider {
+    width: calc(100% - 48px);
+    height: 1px;
+  }
+
+  .pill-field {
+    width: 100%;
+    min-height: 68px;
+  }
+
+  .pill button {width: 100%; min-width: 100%; height: 72px;}
 }
 
 /* Responsive hero */
 @media (max-width: 900px) {
   #hero h1 { font-size: 2.8rem; }
-  .search-pill { bottom: -64px; width: 96%; }
-  .pill { flex-direction: column; }
-  .pill-field { border-right: none; border-bottom: 1px solid #EDEBE7; }
-  .pill button { width: 100%; min-height: 54px; }
 }
 
 @media (max-width: 576px) {
@@ -453,7 +529,7 @@
    §2  ABOUT
 ══════════════════════════════════════════════════════════════ */
 #about {
-  padding: 140px 80px 120px;
+  padding: 60px 80px 60px;
   background: var(--white);
   position: relative;
   overflow: hidden;
@@ -553,38 +629,6 @@
   border-color: var(--gold-dark);
 }
 
-/* Floating stat badge */
-.about-badge {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  z-index: 2;
-  background: var(--black);
-  color: var(--white);
-  padding: 28px 32px;
-  text-align: center;
-  min-width: 140px;
-  animation: float 5s ease-in-out infinite;
-}
-.about-badge .stat-number {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-  display: block;
-}
-.about-badge .stat-label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 8px;
-  display: block;
-}
-
 /* Text column */
 .about-text {
   display: flex;
@@ -619,7 +663,7 @@
   font-size: 0.93rem;
   font-weight: 300;
   line-height: 1.85;
-  color: var(--muted);
+  color: var(--black);
   margin-bottom: 14px;
   text-align: left;
 }
@@ -912,7 +956,7 @@
 ══════════════════════════════════════════════════════════════ */
 #contact-cta {
   width: 100%;
-  padding: 130px 80px 120px;
+  padding: 60px 80px 60px;
   background: var(--white);
   position: relative;
   overflow: hidden;
@@ -966,9 +1010,9 @@
 }
 .contact-intro p,
 #contact-cta > p {
-  font-size: 0.93rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  color: var(--muted);
+  color: var(--black);
   line-height: 1.75;
   margin: 0;
   max-width: 100%;
@@ -1026,7 +1070,7 @@
 .contact-form textarea {
   width: 100%;
   padding: 12px 0;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #D4D0C8;
   border-radius: 0;
@@ -1040,7 +1084,7 @@
 }
 .contact-form textarea {
   resize: none;
-  min-height: 96px;
+  min-height: 50px;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -1069,7 +1113,6 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.5s var(--ease-luxury);
-  margin-top: 8px;
 }
 .contact-form button:hover {
   background: var(--gold);
@@ -1104,7 +1147,7 @@
   font-weight: 300;
   color: var(--black);
   line-height: 1.65;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 /* Contact responsive */

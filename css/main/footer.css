@@ -1,74 +1,221 @@
-/* FOOTER */
+/* ══════════════════════════════════════════════════════════════
+   PROPERTYHILL REALTY — FOOTER
+══════════════════════════════════════════════════════════════ */
+
 footer {
-    background: #111;
-    color: #fff;
-    padding: 50px 5%;
-    margin: 0px;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
+  position: relative;
+  background: var(--black);
+  color: var(--white);
+  padding: 35px 5% 35px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
-/* Columns */
+/* Gold top accent line */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold) 25%,
+    var(--gold-dark) 75%,
+    transparent 100%
+  );
+}
+
+/* Footer columns */
 footer > div {
-    flex: 1;
-    min-width: 220px;
+  flex: 1;
+  min-width: 220px;
 }
 
-/* Headings */
+/* ══════════════════════════════════════════════════════════════
+   BRAND COLUMN
+══════════════════════════════════════════════════════════════ */
+
+.footer-brand h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 0.02em;
+}
+
+.footer-brand h2 span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.footer-brand p {
+  max-width: 320px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEADINGS
+══════════════════════════════════════════════════════════════ */
+
 footer h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    position: relative;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
 }
 
 footer h3::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: #B3954D;
-    margin-top: 8px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-dark)
+  );
 }
 
-/* Text */
+/* ══════════════════════════════════════════════════════════════
+   TEXT
+══════════════════════════════════════════════════════════════ */
+
 footer p {
-    margin: 8px 0;
-    color: #ccc;
-    font-size: 14px;
-    line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.72);
+  margin: 10px 0;
 }
 
-/* Links */
-footer a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s ease;
-}
+/* ══════════════════════════════════════════════════════════════
+   LINKS
+══════════════════════════════════════════════════════════════ */
 
-footer a:hover {
-    color: #B3954D;
-    padding-left: 5px;
-}
-
-/* List */
 footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 footer ul li {
-    margin: 8px 0;
+  margin-bottom: 12px;
 }
 
-/* Responsive */
+footer a {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--gold);
+  padding-left: 6px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CONTACT INFO
+══════════════════════════════════════════════════════════════ */
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SOCIAL LINKS
+══════════════════════════════════════════════════════════════ */
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(179,149,77,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.35s var(--ease);
+}
+
+.footer-social a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+  transform: translateY(-2px);
+  padding-left: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   COPYRIGHT BAR
+══════════════════════════════════════════════════════════════ */
+
+.footer-bottom {
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  footer {
+    gap: 40px;
+  }
+
+  footer > div {
+    min-width: calc(50% - 20px);
+  }
+}
+
 @media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        gap: 25px;
-    }
+  footer {
+    flex-direction: column;
+    gap: 35px;
+    padding: 60px 5% 30px;
+  }
+
+  footer > div {
+    min-width: 100%;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+  }
 }
