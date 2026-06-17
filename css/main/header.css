@@ -2,13 +2,6 @@
    PROPERTYHILL REALTY — HEADER / NAVBAR CSS
    Palette: #FFFFFF · #111111 · #B3954D · #B28419
    Fonts:   Cormorant Garamond (display) · Jost (body)
-
-
-
-   Optional (zero-risk) enhancement: add class="active" to whichever
-   nav link matches the current page, e.g.
-     <a href="../pages/valuation.html" class="active">Valuation</a>
-   to get a persistent gold underline on that link.
 ══════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap');
@@ -206,8 +199,8 @@ nav ul li a:hover::after { width: 100%; }
 /* Optional persistent state — add class="active" to current page link */
 nav ul li a.active { color: var(--gold-dark); }
 nav ul li a.active::after { width: 100%; }
-
-
+nav ul li.dropdown.active > .drop-trigger { color: var(--gold-dark); }
+nav ul li.dropdown.active > .drop-trigger::after { width: 100%; }
 /* ══════════════════════════════════════════════════════════════
    §5  DROPDOWN
 ══════════════════════════════════════════════════════════════ */

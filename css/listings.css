@@ -86,162 +86,131 @@ body {
 /* ══════════════════════════════════════════════════════════════
    §2  PAGE HERO — editorial header, no background image
 ══════════════════════════════════════════════════════════════ */
+
 #page-hero {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 80px 40px 60px;
-  background: var(--white);
-  margin-top: 60px;    /* height of fixed nav */
+  background: var(--black);
+  padding: 130px 40px 90px;
+  margin-top: 60px;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle background watermark */
+/* Rotating ring */
 #page-hero::before {
-  content: "LISTINGS";
+  content: "";
   position: absolute;
-  bottom: -20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: 18vw;
-  font-weight: 700;
-  color: rgba(179, 149, 77, 0.04);
-  white-space: nowrap;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(179,149,77,0.10);
+  transform: translate(-50%,-50%);
+  animation: rotateSlow 80s linear infinite;
   pointer-events: none;
-  user-select: none;
-  letter-spacing: 0.12em;
 }
 
-/* Gold top accent bar */
+/* Inner ring */
 #page-hero::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--gold) 25%,
-    var(--gold-dark) 75%,
-    transparent 100%
-  );
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(179,149,77,0.15);
+  transform: translate(-50%,-50%);
+  pointer-events: none;
 }
 
-.page-hero-inner {
+/* Ensure content sits above rings */
+#page-hero > * {
   position: relative;
   z-index: 1;
-  animation: fadeUp 1s 0.1s var(--ease-luxury) both;
 }
 
 /* Eyebrow */
 .page-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 18px;
-}
-.page-hero-eyebrow::before,
-.page-hero-eyebrow::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
+  animation: fadeUp 1s 0.05s var(--ease) both;
 }
 
+/* Title */
 #page-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 400;
-  color: var(--black);
-  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
   line-height: 1.1;
   letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  animation: fadeUp 1.1s 0.15s var(--ease) both;
 }
+
+/* Optional highlight */
 #page-hero h1 em {
   font-style: italic;
   color: var(--gold);
 }
 
+/* Paragraph */
 #page-hero p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 300;
-  color: var(--muted);
-  max-width: 540px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.78;
+  max-width: 560px;
   margin: 0 auto;
-  line-height: 1.75;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  animation: fadeUp 1.1s 0.30s var(--ease) both;
 }
 
-/* Gold rule under hero */
+/* Gold rule (replaces h1::before) */
 .page-hero-rule {
   display: block;
   width: 56px;
   height: 2px;
+  margin: 0 auto 28px;
   background: linear-gradient(90deg, var(--gold), var(--gold-dark));
-  margin: 32px auto 0;
-  animation: drawLine 1s 0.5s var(--ease-luxury) both;
+  animation: drawLine 1s var(--ease) both;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  #page-hero {
+    padding: 100px 24px 70px;
+    min-height: 44vh;
+  }
+
+  #page-hero h1 {
+    font-size: 2.2rem;
+  }
 }
 
 
 /* ══════════════════════════════════════════════════════════════
    §3  LISTINGS TOOLBAR — results count + sort + view toggle
 ══════════════════════════════════════════════════════════════ */
-.listings-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px 40px;
-  background: var(--white);
-  border-bottom: 1px solid rgba(17, 17, 17, 0.07);
-  position: sticky;
-  top: 60px;
-  z-index: 10;
-}
-
-.toolbar-count {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 400;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-}
-.toolbar-count strong {
-  font-weight: 700;
-  color: var(--black);
-}
-
-.toolbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
 /* Sort dropdown */
-.toolbar-sort {
+.sort {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.toolbar-sort label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.toolbar-sort select {
+
+.sort select {
   font-family: var(--font-body);
   font-size: 0.82rem;
   color: var(--black);
@@ -301,30 +270,27 @@ body {
    §4  MAIN LAYOUT — sidebar + listings content
 ══════════════════════════════════════════════════════════════ */
 #listings-layout {
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  display: flex;
   gap: 40px;
   padding: 48px 40px;
-  align-items: start;
+  align-items: stretch;
   background: var(--off-white);
-  min-height: 80vh;
 }
 
 
-/* ══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════
    §5  SIDEBAR FILTERS
-══════════════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════════ */
 #filters {
+  flex-shrink: 0;
+  width: 280px;
   background: var(--white);
   padding: 0;
   border: none;
   border-radius: 0;
   border-top: 3px solid var(--gold);
   position: sticky;
-  top: 120px;    /* clears the sticky toolbar */
-  max-height: calc(100vh - 160px);
-  overflow-y: auto;
-  scrollbar-width: none;
+  height:fit-content;
   box-shadow: var(--shadow-sm);
   animation: slideLeft 0.9s 0.1s var(--ease-luxury) both;
 }
@@ -577,6 +543,8 @@ input[type="range"]::-moz-range-thumb {
 ══════════════════════════════════════════════════════════════ */
 .property-grid {
   display: grid;
+  flex: 1;
+  overflow-y: auto;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
