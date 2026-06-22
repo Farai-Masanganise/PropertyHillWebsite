@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Listing — Propertyhill Realty</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/main/header.css">
+    <link rel="stylesheet" href="../../css/main/footer.css">
+    <link rel="stylesheet" href="../../css/newlisting.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER  (same as all pages)
+═══════════════════════════════════════════════ -->
+<header>
+    <nav>
+        <div class="logo">
+            <a href="../index.html" class="logo-link">
+                <div class="logo-img"><img src="../assets/logo.jpeg" alt="Propertyhill Realty"></div>
+                <div class="logo-text">Propertyhill <span>Realty</span></div>
+            </a>
+        </div>
+        <ul class="main-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="valuation.html">Valuation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">EstatePro</div>
+
+    <ul class="nav-links">
+        <li><a href="dash.html">🏠 Home</a></li>
+        <li><a href="/pages/internal/listings.html">📋 Listings</a></li>
+        <li><a href="../internal/newlisting.html" class="active">➕ New Listing</a></li>
+        <li><a href="messages.html">💬 Messages</a></li>
+        <li><a href="stats.html">📊 Stats</a></li>
+    </ul>
+</aside>
+<!-- ═══════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════ -->
+<main class="new-listing-main">
+
+    <!-- Page heading -->
+    <div class="listing-page-header">
+        <span class="listing-eyebrow">Admin</span>
+        <h1>New Property Listing</h1>
+        <p>Complete all five steps to publish a listing to the database.</p>
+    </div>
+
+    <!-- ─────────────────────────────────────────
+         STEP INDICATOR
+    ───────────────────────────────────────── -->
+    <div class="step-indicator" id="step-indicator">
+
+        <div class="step-item active" data-step="1">
+            <div class="step-circle">
+                <span class="step-num">1</span>
+                <svg class="step-check" viewBox="0 0 14 14" fill="none">
+                    <polyline points="2,7 6,11 12,3" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="step-label">Core Details</span>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <div class="step-item" data-step="2">
+            <div class="step-circle">
+                <span class="step-num">2</span>
+                <svg class="step-check" viewBox="0 0 14 14" fill="none">
+                    <polyline points="2,7 6,11 12,3" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="step-label">Property Details</span>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <div class="step-item" data-step="3">
+            <div class="step-circle">
+                <span class="step-num">3</span>
+                <svg class="step-check" viewBox="0 0 14 14" fill="none">
+                    <polyline points="2,7 6,11 12,3" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="step-label">Location & Images</span>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <div class="step-item" data-step="4">
+            <div class="step-circle">
+                <span class="step-num">4</span>
+                <svg class="step-check" viewBox="0 0 14 14" fill="none">
+                    <polyline points="2,7 6,11 12,3" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="step-label">Amenities</span>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <div class="step-item" data-step="5">
+            <div class="step-circle">
+                <span class="step-num">5</span>
+                <svg class="step-check" viewBox="0 0 14 14" fill="none">
+                    <polyline points="2,7 6,11 12,3" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="step-label">Review & Submit</span>
+        </div>
+
+    </div><!-- /step-indicator -->
+
+
+    <!-- ─────────────────────────────────────────
+         FORM WRAPPER
+    ───────────────────────────────────────── -->
+    <form id="listing-form" novalidate>
+
+        <!-- ═══════════════════════════════════
+             STEP 1 — CORE LISTING DETAILS
+        ════════════════════════════════════ -->
+        <section class="form-step active" id="step-1">
+
+            <div class="step-header">
+                <span class="step-eyebrow">Step 1 of 5</span>
+                <h2>Core Details</h2>
+                <p>The essential information that describes this listing.</p>
+            </div>
+
+            <div class="form-panel">
+
+                <!-- Title -->
+                <div class="field-group full">
+                    <label for="title">Property Title <span class="required">*</span></label>
+                    <input type="text" id="title" name="title"
+                           placeholder="e.g. Commercial Stand — Harare CBD" required>
+                    <span class="field-hint">Clear, descriptive title for the listing.</span>
+                </div>
+
+                <!-- Description -->
+                <div class="field-group full">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="5"
+                              placeholder="Describe the property — features, condition, surroundings…"></textarea>
+                </div>
+
+                <!-- Transaction Type -->
+                <div class="field-group full">
+                    <label>Transaction Type <span class="required">*</span></label>
+                    <div class="radio-row" id="transaction-type-group">
+
+                        <label class="radio-card">
+                            <input type="radio" name="transaction_type" value="sale" required>
+                            <span class="radio-label">
+                                <strong>Sale</strong>
+                                <small>One-time purchase</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="transaction_type" value="lease">
+                            <span class="radio-label">
+                                <strong>Lease / Rental</strong>
+                                <small>Recurring agreement</small>
+                            </span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Development Status -->
+                <div class="field-group full">
+                    <label>Development Status <span class="required">*</span></label>
+                    <div class="radio-row">
+
+                        <label class="radio-card">
+                            <input type="radio" name="development_status" value="land" required>
+                            <span class="radio-label">
+                                <strong>Land / Vacant</strong>
+                                <small>Undeveloped stand or plot</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="development_status" value="partially_developed">
+                            <span class="radio-label">
+                                <strong>Partially Developed</strong>
+                                <small>Under construction or incomplete</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="development_status" value="developed">
+                            <span class="radio-label">
+                                <strong>Developed</strong>
+                                <small>Fully built and usable</small>
+                            </span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Listing Status -->
+                <div class="field-group">
+                    <label for="status">Listing Status <span class="required">*</span></label>
+                    <div class="select-wrap">
+                        <select id="status" name="status" required>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive (Draft)</option>
+                            <option value="sold"    class="sale-only">Sold</option>
+                            <option value="rented"  class="lease-only" disabled>Rented</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Negotiable -->
+                <div class="field-group align-end">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="negotiable" name="negotiable" value="1">
+                        <span class="toggle-track"></span>
+                        <span class="toggle-text">Price is negotiable</span>
+                    </label>
+                </div>
+
+                <!-- Pricing row -->
+                <div class="field-row">
+
+                    <div class="field-group">
+                        <label for="price_amount">Price <span class="required">*</span></label>
+                        <input type="number" id="price_amount" name="price_amount"
+                               min="0" step="0.01" placeholder="0.00" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="currency">Currency</label>
+                        <div class="select-wrap">
+                            <select id="currency" name="currency">
+                                <option value="USD" selected>USD — US Dollar</option>
+                                <option value="ZWL">ZWL — Zimbabwe Dollar</option>
+                                <option value="ZAR">ZAR — South African Rand</option>
+                                <option value="GBP">GBP — British Pound</option>
+                                <option value="EUR">EUR — Euro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Rent period — hidden until Lease is selected -->
+                    <div class="field-group" id="rent-period-group" hidden>
+                        <label for="rent_period">Rent Period <span class="required">*</span></label>
+                        <div class="select-wrap">
+                            <select id="rent_period" name="rent_period">
+                                <option value="">Select period…</option>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly" selected>Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="annually">Annually</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div><!-- /field-row -->
+
+            </div><!-- /form-panel -->
+
+        </section><!-- /step-1 -->
+
+
+        <!-- ═══════════════════════════════════
+             STEP 2 — PROPERTY DETAILS
+        ════════════════════════════════════ -->
+        <section class="form-step" id="step-2">
+
+            <div class="step-header">
+                <span class="step-eyebrow">Step 2 of 5</span>
+                <h2>Property Details</h2>
+                <p>Classify the property and fill in its specific attributes.</p>
+            </div>
+
+            <div class="form-panel">
+
+                <!-- Property Category -->
+                <div class="field-group full">
+                    <label>Property Category <span class="required">*</span></label>
+                    <div class="radio-row" id="category-group">
+
+                        <label class="radio-card">
+                            <input type="radio" name="category" value="residential" required>
+                            <span class="radio-label">
+                                <strong>Residential</strong>
+                                <small>Houses, flats, townhouses</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="category" value="commercial">
+                            <span class="radio-label">
+                                <strong>Commercial</strong>
+                                <small>Offices, retail, hotels</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="category" value="industrial">
+                            <span class="radio-label">
+                                <strong>Industrial</strong>
+                                <small>Warehouses, factories</small>
+                            </span>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="category" value="agricultural">
+                            <span class="radio-label">
+                                <strong>Agricultural</strong>
+                                <small>Farms, ranches, orchards</small>
+                            </span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Property Type — filtered dynamically by JS -->
+                <div class="field-group" id="property-type-group">
+                    <label for="property_type">Property Type <span class="required">*</span></label>
+                    <div class="select-wrap">
+                        <select id="property_type" name="property_type" required disabled>
+                            <option value="">Select a category first…</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div><!-- /form-panel -->
+
+            <!-- ── Residential Details ──────────────────── -->
+            <div class="detail-section form-panel" id="details-residential" hidden>
+                <div class="detail-section-title">Residential Specifications</div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="number" id="bedrooms" name="bedrooms" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="number" id="bathrooms" name="bathrooms" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="toilets">Toilets</label>
+                        <input type="number" id="toilets" name="toilets" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="floors_res">Floors</label>
+                        <input type="number" id="floors_res" name="floors" min="1" placeholder="1">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="building_size_res">Building Size (m²)</label>
+                        <input type="number" id="building_size_res" name="building_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="land_size_res">Land Size (m²)</label>
+                        <input type="number" id="land_size_res" name="land_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="garage_spaces">Garage Spaces</label>
+                        <input type="number" id="garage_spaces" name="garage_spaces" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="parking_spaces_res">Parking Spaces</label>
+                        <input type="number" id="parking_spaces_res" name="parking_spaces" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="year_built">Year Built</label>
+                        <input type="number" id="year_built" name="year_built"
+                               min="1900" max="2099" placeholder="e.g. 2005">
+                    </div>
+                    <div class="field-group align-end">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="furnished" name="furnished" value="1">
+                            <span class="toggle-track"></span>
+                            <span class="toggle-text">Furnished</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div><!-- /details-residential -->
+
+            <!-- ── Commercial Details ───────────────────── -->
+            <div class="detail-section form-panel" id="details-commercial" hidden>
+                <div class="detail-section-title">Commercial Specifications</div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="building_size_com">Building Size (m²)</label>
+                        <input type="number" id="building_size_com" name="com_building_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="land_size_com">Land Size (m²)</label>
+                        <input type="number" id="land_size_com" name="com_land_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="floors_com">Floors</label>
+                        <input type="number" id="floors_com" name="com_floors" min="1" placeholder="1">
+                    </div>
+                    <div class="field-group">
+                        <label for="office_units">Office Units</label>
+                        <input type="number" id="office_units" name="office_units" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="parking_spaces_com">Parking Spaces</label>
+                        <input type="number" id="parking_spaces_com" name="com_parking_spaces" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="loading_bays">Loading Bays</label>
+                        <input type="number" id="loading_bays" name="loading_bays" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="occupancy_rate">Occupancy Rate (%)</label>
+                        <input type="number" id="occupancy_rate" name="occupancy_rate"
+                               min="0" max="100" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+
+            </div><!-- /details-commercial -->
+
+            <!-- ── Industrial Details ───────────────────── -->
+            <div class="detail-section form-panel" id="details-industrial" hidden>
+                <div class="detail-section-title">Industrial Specifications</div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="building_size_ind">Building Size (m²)</label>
+                        <input type="number" id="building_size_ind" name="ind_building_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="land_size_ind">Land Size (m²)</label>
+                        <input type="number" id="land_size_ind" name="ind_land_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="warehouse_height">Warehouse Height (m)</label>
+                        <input type="number" id="warehouse_height" name="warehouse_height_m"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="yard_size">Yard Size (m²)</label>
+                        <input type="number" id="yard_size" name="yard_size_sqm"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="loading_docks">Loading Docks</label>
+                        <input type="number" id="loading_docks" name="loading_docks" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="power_supply">Power Supply (kVA)</label>
+                        <input type="number" id="power_supply" name="power_supply_capacity_kva"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group align-end">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="truck_access" name="truck_access" value="1">
+                            <span class="toggle-track"></span>
+                            <span class="toggle-text">Truck Access</span>
+                        </label>
+                    </div>
+                    <div class="field-group align-end">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="crane_installed" name="crane_installed" value="1">
+                            <span class="toggle-track"></span>
+                            <span class="toggle-text">Crane Installed</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div><!-- /details-industrial -->
+
+            <!-- ── Agricultural Details ─────────────────── -->
+            <div class="detail-section form-panel" id="details-agricultural" hidden>
+                <div class="detail-section-title">Agricultural Specifications</div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="land_size_ha">Total Land Size (ha)</label>
+                        <input type="number" id="land_size_ha" name="land_size_ha"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="arable_land">Arable Land (ha)</label>
+                        <input type="number" id="arable_land" name="arable_land_size_ha"
+                               min="0" step="0.01" placeholder="0.00">
+                    </div>
+                    <div class="field-group">
+                        <label for="boreholes_count">Boreholes</label>
+                        <input type="number" id="boreholes_count" name="boreholes_count" min="0" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label for="livestock_capacity">Livestock Capacity</label>
+                        <input type="number" id="livestock_capacity" name="livestock_capacity" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="irrigation_type">Irrigation Type</label>
+                        <div class="select-wrap">
+                            <select id="irrigation_type" name="irrigation_type">
+                                <option value="">None / Unknown</option>
+                                <option value="drip">Drip Irrigation</option>
+                                <option value="sprinkler">Sprinkler</option>
+                                <option value="flood">Flood</option>
+                                <option value="centre_pivot">Centre Pivot</option>
+                                <option value="manual">Manual</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="water_sources">Water Sources</label>
+                        <input type="text" id="water_sources" name="water_sources"
+                               placeholder="e.g. Borehole, River, Dam">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="crop_types">Crop Types</label>
+                        <input type="text" id="crop_types" name="crop_types"
+                               placeholder="e.g. Maize, Tobacco, Vegetables">
+                    </div>
+                    <div class="field-group">
+                        <label for="farm_structures">Farm Structures</label>
+                        <input type="text" id="farm_structures" name="farm_structures"
+                               placeholder="e.g. Barn, Cold room, Workers quarters">
+                    </div>
+                </div>
+
+            </div><!-- /details-agricultural -->
+
+        </section><!-- /step-2 -->
+
+
+        <!-- ═══════════════════════════════════
+             STEP 3 — LOCATION & IMAGES
+        ════════════════════════════════════ -->
+        <section class="form-step" id="step-3">
+
+            <div class="step-header">
+                <span class="step-eyebrow">Step 3 of 5</span>
+                <h2>Location & Images</h2>
+                <p>Where is this property, and how should it look to buyers?</p>
+            </div>
+
+            <!-- Location -->
+            <div class="form-panel">
+                <div class="detail-section-title">Geographic Location</div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" value="Zimbabwe">
+                    </div>
+                    <div class="field-group">
+                        <label for="province">Province / Region</label>
+                        <div class="select-wrap">
+                            <select id="province" name="province">
+                                <option value="">Select province…</option>
+                                <option value="Harare" selected>Harare</option>
+                                <option value="Bulawayo">Bulawayo</option>
+                                <option value="Manicaland">Manicaland</option>
+                                <option value="Mashonaland Central">Mashonaland Central</option>
+                                <option value="Mashonaland East">Mashonaland East</option>
+                                <option value="Mashonaland West">Mashonaland West</option>
+                                <option value="Masvingo">Masvingo</option>
+                                <option value="Matabeleland North">Matabeleland North</option>
+                                <option value="Matabeleland South">Matabeleland South</option>
+                                <option value="Midlands">Midlands</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="city">City / Town <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" placeholder="e.g. Harare" required>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="suburb">Suburb <span class="required">*</span></label>
+                        <input type="text" id="suburb" name="suburb" placeholder="e.g. Borrowdale" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="street_address">Street Address</label>
+                        <input type="text" id="street_address" name="street_address"
+                               placeholder="e.g. 12 Acacia Avenue">
+                    </div>
+                    <div class="field-group">
+                        <label for="postal_code">Postal Code</label>
+                        <input type="text" id="postal_code" name="postal_code" placeholder="e.g. 00263">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="latitude">Latitude <span class="field-hint-inline">(optional)</span></label>
+                        <input type="number" id="latitude" name="latitude"
+                               step="0.000001" min="-90" max="90" placeholder="-17.831284">
+                    </div>
+                    <div class="field-group">
+                        <label for="longitude">Longitude <span class="field-hint-inline">(optional)</span></label>
+                        <input type="number" id="longitude" name="longitude"
+                               step="0.000001" min="-180" max="180" placeholder="31.045686">
+                    </div>
+                    <div class="field-group align-end">
+                        <button type="button" class="btn-secondary" id="get-location-btn">
+                            ◈ Use My Location
+                        </button>
+                    </div>
+                </div>
+
+            </div><!-- /location panel -->
+
+            <!-- Images -->
+            <div class="form-panel">
+                <div class="detail-section-title">Property Images</div>
+
+                <div class="field-hint" style="margin-bottom:20px">
+                    Upload up to 10 images. The first image becomes the cover photo.
+                    Drag to reorder after upload.
+                </div>
+
+                <!-- Drop zone -->
+                <div class="image-drop-zone" id="image-drop-zone">
+                    <input type="file" id="images" name="images[]"
+                           accept="image/jpeg,image/png,image/webp"
+                           multiple hidden>
+                    <div class="drop-zone-inner">
+                        <div class="drop-icon">⊕</div>
+                        <p><strong>Drag images here</strong> or click to browse</p>
+                        <span>JPEG, PNG, WebP — max 5MB each</span>
+                    </div>
+                </div>
+
+                <!-- Preview grid — populated by JS -->
+                <div class="image-preview-grid" id="image-preview-grid"></div>
+
+            </div><!-- /images panel -->
+
+        </section><!-- /step-3 -->
+
+
+        <!-- ═══════════════════════════════════
+             STEP 4 — AMENITIES
+        ════════════════════════════════════ -->
+        <section class="form-step" id="step-4">
+
+            <div class="step-header">
+                <span class="step-eyebrow">Step 4 of 5</span>
+                <h2>Amenities & Features</h2>
+                <p>Select all features available at this property. All are optional.</p>
+            </div>
+
+            <div class="form-panel">
+
+                <div class="amenities-grid">
+
+                    <!-- Each .amenity-item: checkbox → expands value + notes -->
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="borehole">
+                            <span class="amenity-name">Borehole</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[borehole]" placeholder="Value (e.g. 2 units)">
+                            <input type="text" name="amenity_notes[borehole]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="swimming_pool">
+                            <span class="amenity-name">Swimming Pool</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[swimming_pool]" placeholder="Value">
+                            <input type="text" name="amenity_notes[swimming_pool]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="solar_system">
+                            <span class="amenity-name">Solar System</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[solar_system]" placeholder="e.g. 5kW">
+                            <input type="text" name="amenity_notes[solar_system]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="generator">
+                            <span class="amenity-name">Generator</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[generator]" placeholder="e.g. 20kVA">
+                            <input type="text" name="amenity_notes[generator]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="air_conditioning">
+                            <span class="amenity-name">Air Conditioning</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[air_conditioning]" placeholder="e.g. Central">
+                            <input type="text" name="amenity_notes[air_conditioning]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="security_fence">
+                            <span class="amenity-name">Security Fence</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[security_fence]" placeholder="e.g. Electric">
+                            <input type="text" name="amenity_notes[security_fence]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="cctv">
+                            <span class="amenity-name">CCTV</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[cctv]" placeholder="e.g. 8 cameras">
+                            <input type="text" name="amenity_notes[cctv]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="parking">
+                            <span class="amenity-name">Parking</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[parking]" placeholder="e.g. 10 bays">
+                            <input type="text" name="amenity_notes[parking]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="internet">
+                            <span class="amenity-name">Internet / Fibre</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[internet]" placeholder="e.g. Fibre 100Mbps">
+                            <input type="text" name="amenity_notes[internet]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="garden">
+                            <span class="amenity-name">Garden</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[garden]" placeholder="Value">
+                            <input type="text" name="amenity_notes[garden]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="servants_quarters">
+                            <span class="amenity-name">Servants Quarters</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[servants_quarters]" placeholder="e.g. 2 rooms">
+                            <input type="text" name="amenity_notes[servants_quarters]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                    <div class="amenity-item">
+                        <label class="amenity-check-label">
+                            <input type="checkbox" class="amenity-checkbox" name="amenity[]" value="borehole_pump">
+                            <span class="amenity-name">Water Storage Tank</span>
+                        </label>
+                        <div class="amenity-extras" hidden>
+                            <input type="text" name="amenity_value[borehole_pump]" placeholder="e.g. 5000L">
+                            <input type="text" name="amenity_notes[borehole_pump]" placeholder="Notes">
+                        </div>
+                    </div>
+
+                </div><!-- /amenities-grid -->
+
+            </div><!-- /form-panel -->
+
+        </section><!-- /step-4 -->
+
+
+        <!-- ═══════════════════════════════════
+             STEP 5 — REVIEW & SUBMIT
+        ════════════════════════════════════ -->
+        <section class="form-step" id="step-5">
+
+            <div class="step-header">
+                <span class="step-eyebrow">Step 5 of 5</span>
+                <h2>Review & Submit</h2>
+                <p>Check everything before the listing goes live. Click any section to edit.</p>
+            </div>
+
+            <!-- Review panels — populated by JS -->
+            <div class="review-grid">
+
+                <div class="review-panel" data-goto="1">
+                    <div class="review-panel-header">
+                        <span class="review-panel-title">Core Details</span>
+                        <button type="button" class="review-edit-btn" data-goto="1">Edit</button>
+                    </div>
+                    <dl class="review-dl" id="review-core"></dl>
+                </div>
+
+                <div class="review-panel" data-goto="2">
+                    <div class="review-panel-header">
+                        <span class="review-panel-title">Property Details</span>
+                        <button type="button" class="review-edit-btn" data-goto="2">Edit</button>
+                    </div>
+                    <dl class="review-dl" id="review-details"></dl>
+                </div>
+
+                <div class="review-panel" data-goto="3">
+                    <div class="review-panel-header">
+                        <span class="review-panel-title">Location & Images</span>
+                        <button type="button" class="review-edit-btn" data-goto="3">Edit</button>
+                    </div>
+                    <dl class="review-dl" id="review-location"></dl>
+                </div>
+
+                <div class="review-panel" data-goto="4">
+                    <div class="review-panel-header">
+                        <span class="review-panel-title">Amenities</span>
+                        <button type="button" class="review-edit-btn" data-goto="4">Edit</button>
+                    </div>
+                    <dl class="review-dl" id="review-amenities"></dl>
+                </div>
+
+            </div><!-- /review-grid -->
+
+            <!-- Validation error notice -->
+            <div class="submit-notice" id="submit-notice" hidden>
+                <span>⚠</span>
+                <p id="submit-notice-text">Please fix the highlighted fields before submitting.</p>
+            </div>
+
+        </section><!-- /step-5 -->
+
+
+        <!-- ─────────────────────────────────────────
+             FORM NAVIGATION
+        ───────────────────────────────────────── -->
+        <div class="form-nav">
+            <button type="button" class="btn-secondary" id="prev-btn" disabled>
+                ← Previous
+            </button>
+
+            <div class="nav-step-label" id="nav-step-label">Step 1 of 5</div>
+
+            <button type="button" class="btn-primary" id="next-btn">
+                Next Step →
+            </button>
+            <button type="submit" class="btn-primary btn-submit" id="submit-btn" hidden>
+                Submit Listing ✓
+            </button>
+        </div>
+
+    </form><!-- /listing-form -->
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+    <div>
+        <h3>Propertyhill Realty</h3>
+        <p>Innovative Solutions</p>
+    </div>
+    <div>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="valuation.html">Valuation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Contact</h3>
+        <p><a href="tel:+263775970121">+263 775 970 121</a></p>
+        <p><a href="mailto:info@propertyhillrealty.com">info@propertyhillrealty.com</a></p>
+    </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+//  PROPERTYHILL REALTY — NEW LISTING FORM JS
+//  Handles: step navigation · mutual exclusions · filtering ·
+//           image preview · review population · validation
+// ══════════════════════════════════════════════════════════════
+
+(function () {
+'use strict';
+
+// ── State ─────────────────────────────────────────────────────
+let currentStep = 1;
+const TOTAL_STEPS = 5;
+
+// ── Property types by category ────────────────────────────────
+const PROPERTY_TYPES = {
+  residential:  ['House', 'Apartment', 'Townhouse', 'Flat', 'Cluster', 'Estate'],
+  commercial:   ['Office', 'Retail Shop', 'Hotel', 'Restaurant', 'Shopping Centre', 'Mixed Use'],
+  industrial:   ['Warehouse', 'Factory', 'Industrial Park', 'Cold Storage', 'Workshop'],
+  agricultural: ['Farm', 'Ranch', 'Orchard', 'Smallholding', 'Plot']
+};
+
+// ── Cached elements ───────────────────────────────────────────
+const form          = document.getElementById('listing-form');
+const prevBtn       = document.getElementById('prev-btn');
+const nextBtn       = document.getElementById('next-btn');
+const submitBtn     = document.getElementById('submit-btn');
+const navLabel      = document.getElementById('nav-step-label');
+const dropZone      = document.getElementById('image-drop-zone');
+const fileInput     = document.getElementById('images');
+const previewGrid   = document.getElementById('image-preview-grid');
+const submitNotice  = document.getElementById('submit-notice');
+const submitNoticeText = document.getElementById('submit-notice-text');
+
+
+// ══════════════════════════════════════════════════════════════
+//  §1  STEP NAVIGATION
+// ══════════════════════════════════════════════════════════════
+
+function goToStep(step) {
+  // Hide all steps
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.step-item').forEach(s => {
+    s.classList.remove('active');
+    if (parseInt(s.dataset.step) < step) s.classList.add('completed');
+    else                                 s.classList.remove('completed');
+  });
+
+  // Show target step
+  document.getElementById('step-' + step).classList.add('active');
+  document.querySelector('.step-item[data-step="' + step + '"]').classList.add('active');
+
+  currentStep = step;
+  navLabel.textContent = 'Step ' + step + ' of ' + TOTAL_STEPS;
+
+  prevBtn.disabled    = step === 1;
+  nextBtn.hidden      = step === TOTAL_STEPS;
+  submitBtn.hidden    = step !== TOTAL_STEPS;
+  submitNotice.hidden = true;
+
+  // Populate review on last step
+  if (step === TOTAL_STEPS) populateReview();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+nextBtn.addEventListener('click', function () {
+  if (!validateStep(currentStep)) return;
+  if (currentStep < TOTAL_STEPS) goToStep(currentStep + 1);
+});
+
+prevBtn.addEventListener('click', function () {
+  if (currentStep > 1) goToStep(currentStep - 1);
+});
+
+// Edit buttons on review panels
+document.querySelectorAll('.review-edit-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    goToStep(parseInt(this.dataset.goto));
+  });
+});
+
+
+// ══════════════════════════════════════════════════════════════
+//  §2  STEP VALIDATION
+// ══════════════════════════════════════════════════════════════
+
+function validateStep(step) {
+  let valid = true;
+  let message = '';
+
+  // Clear previous errors
+  form.querySelectorAll('.field-error').forEach(e => e.remove());
+  form.querySelectorAll('.input-error').forEach(e => e.classList.remove('input-error'));
+
+  if (step === 1) {
+    if (!val('title')) {
+      markError('title', 'Property title is required.');
+      valid = false; message = 'Please enter a property title.';
+    }
+    if (!val('price_amount') || parseFloat(val('price_amount')) < 0) {
+      markError('price_amount', 'A valid price is required.');
+      valid = false; message = message || 'Please enter a valid price.';
+    }
+    if (!checkedRadio('transaction_type')) {
+      valid = false; message = message || 'Please select a transaction type.';
+    }
+    if (!checkedRadio('development_status')) {
+      valid = false; message = message || 'Please select a development status.';
+    }
+    const isLease = checkedRadio('transaction_type') === 'lease';
+    if (isLease && !val('rent_period')) {
+      markError('rent_period', 'Rent period is required for lease listings.');
+      valid = false; message = message || 'Please select a rent period.';
+    }
+  }
+
+  if (step === 2) {
+    if (!checkedRadio('category')) {
+      valid = false; message = 'Please select a property category.';
+    }
+    if (!val('property_type')) {
+      markError('property_type', 'Please select a property type.');
+      valid = false; message = message || 'Please select a property type.';
+    }
+  }
+
+  if (step === 3) {
+    if (!val('city')) {
+      markError('city', 'City is required.');
+      valid = false; message = 'Please enter the city.';
+    }
+    if (!val('suburb')) {
+      markError('suburb', 'Suburb is required.');
+      valid = false; message = message || 'Please enter the suburb.';
+    }
+  }
+
+  if (!valid) {
+    submitNoticeText.textContent = message;
+    submitNotice.hidden = false;
+  }
+
+  return valid;
+}
+
+function val(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+function checkedRadio(name) {
+  const checked = document.querySelector('input[name="' + name + '"]:checked');
+  return checked ? checked.value : null;
+}
+
+function markError(id, msg) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('input-error');
+  const err = document.createElement('span');
+  err.className = 'field-error';
+  err.textContent = msg;
+  el.parentNode.insertBefore(err, el.nextSibling);
+}
+
+
+// ══════════════════════════════════════════════════════════════
+//  §3  MUTUAL EXCLUSIONS — TRANSACTION TYPE
+// ══════════════════════════════════════════════════════════════
+
+document.querySelectorAll('input[name="transaction_type"]').forEach(radio => {
+  radio.addEventListener('change', function () {
+    const isLease  = this.value === 'lease';
+    const isSale   = this.value === 'sale';
+    const rentGroup = document.getElementById('rent-period-group');
+    const rentSelect = document.getElementById('rent_period');
+    const statusSelect = document.getElementById('status');
+
+    // Rent period — only visible for lease
+    rentGroup.hidden = !isLease;
+    rentSelect.required = isLease;
+    if (isSale) rentSelect.value = '';
+
+    // Status options — filter incompatible values
+    Array.from(statusSelect.options).forEach(opt => {
+      if (opt.value === 'sold')   { opt.disabled = isLease;  }
+      if (opt.value === 'rented') { opt.disabled = isSale;   }
+    });
+    // Reset status to active if current value is now invalid
+    if ((isSale && statusSelect.value === 'rented') ||
+        (isLease && statusSelect.value === 'sold')) {
+      statusSelect.value = 'active';
+    }
+  });
+});
+
+
+// ══════════════════════════════════════════════════════════════
+//  §4  PROPERTY CATEGORY → TYPE + DETAIL SECTION FILTERING
+// ══════════════════════════════════════════════════════════════
+
+document.querySelectorAll('input[name="category"]').forEach(radio => {
+  radio.addEventListener('change', function () {
+    const category     = this.value;
+    const typeSelect   = document.getElementById('property_type');
+    const detailSections = document.querySelectorAll('.detail-section');
+
+    // Re-populate property type dropdown
+    typeSelect.innerHTML = '<option value="">Select type…</option>';
+    typeSelect.disabled  = false;
+
+    (PROPERTY_TYPES[category] || []).forEach(function (type) {
+      const opt = document.createElement('option');
+      opt.value = type.toLowerCase().replace(/\s+/g, '_');
+      opt.textContent = type;
+      typeSelect.appendChild(opt);
+    });
+
+    // Show matching detail section, hide all others
+    detailSections.forEach(function (section) {
+      section.hidden = true;
+    });
+    const target = document.getElementById('details-' + category);
+    if (target) target.hidden = false;
+  });
+});
+
+
+// ══════════════════════════════════════════════════════════════
+//  §5  AMENITY CHECKBOXES → EXPAND VALUE / NOTES
+// ══════════════════════════════════════════════════════════════
+
+document.querySelectorAll('.amenity-checkbox').forEach(function (cb) {
+  cb.addEventListener('change', function () {
+    const extras = this.closest('.amenity-item').querySelector('.amenity-extras');
+    if (extras) {
+      extras.hidden = !this.checked;
+      if (!this.checked) {
+        extras.querySelectorAll('input').forEach(i => i.value = '');
+      }
+    }
+  });
+});
+
+
+// ══════════════════════════════════════════════════════════════
+//  §6  IMAGE UPLOAD — DRAG, DROP, PREVIEW
+// ══════════════════════════════════════════════════════════════
+
+dropZone.addEventListener('click', function () { fileInput.click(); });
+
+dropZone.addEventListener('dragover', function (e) {
+  e.preventDefault();
+  dropZone.classList.add('drag-over');
+});
+
+dropZone.addEventListener('dragleave', function () {
+  dropZone.classList.remove('drag-over');
+});
+
+dropZone.addEventListener('drop', function (e) {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  handleFiles(e.dataTransfer.files);
+});
+
+fileInput.addEventListener('change', function () {
+  handleFiles(this.files);
+});
+
+let uploadedFiles = [];
+
+function handleFiles(files) {
+  Array.from(files).forEach(function (file) {
+    if (!file.type.startsWith('image/')) return;
+    if (file.size > 5 * 1024 * 1024) {
+      alert(file.name + ' exceeds the 5MB limit.');
+      return;
+    }
+    if (uploadedFiles.length >= 10) {
+      alert('Maximum 10 images allowed.');
+      return;
+    }
+
+    const index = uploadedFiles.length;
+    uploadedFiles.push(file);
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      addImagePreview(e.target.result, file.name, index);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function addImagePreview(src, name, index) {
+  const item = document.createElement('div');
+  item.className = 'image-preview-item';
+  item.dataset.index = index;
+  item.innerHTML =
+    '<img src="' + src + '" alt="' + name + '">' +
+    (index === 0 ? '<span class="image-cover-badge">Cover</span>' : '') +
+    '<button type="button" class="image-remove-btn" data-index="' + index + '">×</button>';
+  previewGrid.appendChild(item);
+
+  item.querySelector('.image-remove-btn').addEventListener('click', function () {
+    uploadedFiles.splice(parseInt(this.dataset.index), 1);
+    item.remove();
+    refreshCoverBadge();
+  });
+}
+
+function refreshCoverBadge() {
+  document.querySelectorAll('.image-preview-item').forEach(function (item, i) {
+    const existing = item.querySelector('.image-cover-badge');
+    if (i === 0 && !existing) {
+      const badge = document.createElement('span');
+      badge.className = 'image-cover-badge';
+      badge.textContent = 'Cover';
+      item.appendChild(badge);
+    } else if (i !== 0 && existing) {
+      existing.remove();
+    }
+  });
+}
+
+
+// ══════════════════════════════════════════════════════════════
+//  §7  GPS — GET MY LOCATION
+// ══════════════════════════════════════════════════════════════
+
+document.getElementById('get-location-btn').addEventListener('click', function () {
+  if (!navigator.geolocation) {
+    alert('Geolocation is not supported by your browser.');
+    return;
+  }
+  this.textContent = 'Locating…';
+  const btn = this;
+  navigator.geolocation.getCurrentPosition(
+    function (pos) {
+      document.getElementById('latitude').value  = pos.coords.latitude.toFixed(6);
+      document.getElementById('longitude').value = pos.coords.longitude.toFixed(6);
+      btn.textContent = '◈ Location Set';
+    },
+    function () {
+      alert('Could not retrieve location. Please enter coordinates manually.');
+      btn.textContent = '◈ Use My Location';
+    }
+  );
+});
+
+
+// ══════════════════════════════════════════════════════════════
+//  §8  REVIEW PANEL POPULATION
+// ══════════════════════════════════════════════════════════════
+
+function populateReview() {
+  // Core details
+  const transType = checkedRadio('transaction_type');
+  const devStatus = checkedRadio('development_status');
+  setReview('review-core', [
+    ['Title',              val('title')           || '—'],
+    ['Transaction',        transType ? cap(transType) : '—'],
+    ['Development Status', devStatus ? cap(devStatus.replace(/_/g,' ')) : '—'],
+    ['Price',              val('price_amount') ? val('currency') + ' ' + Number(val('price_amount')).toLocaleString() : '—'],
+    ['Rent Period',        transType === 'lease' ? (val('rent_period') || '—') : 'N/A'],
+    ['Negotiable',         document.getElementById('negotiable').checked ? 'Yes' : 'No'],
+    ['Status',             cap(val('status'))      || '—'],
+  ]);
+
+  // Property details
+  const category = checkedRadio('category');
+  const typeEl   = document.getElementById('property_type');
+  const typeName = typeEl.options[typeEl.selectedIndex] ? typeEl.options[typeEl.selectedIndex].text : '—';
+  const detailItems = [
+    ['Category',      category ? cap(category) : '—'],
+    ['Property Type', typeName  || '—'],
+  ];
+  // Add category-specific fields to review
+  if (category === 'residential') {
+    detailItems.push(
+      ['Bedrooms',  val('bedrooms')  || '—'],
+      ['Bathrooms', val('bathrooms') || '—'],
+      ['Building',  val('building_size_res') ? val('building_size_res') + ' m²' : '—'],
+      ['Land',      val('land_size_res')      ? val('land_size_res')      + ' m²' : '—'],
+      ['Furnished', document.getElementById('furnished').checked ? 'Yes' : 'No']
+    );
+  } else if (category === 'commercial') {
+    detailItems.push(
+      ['Building',       val('building_size_com') ? val('building_size_com') + ' m²' : '—'],
+      ['Office Units',   val('office_units')  || '—'],
+      ['Occupancy Rate', val('occupancy_rate') ? val('occupancy_rate') + '%' : '—']
+    );
+  } else if (category === 'industrial') {
+    detailItems.push(
+      ['Building',          val('building_size_ind') ? val('building_size_ind') + ' m²' : '—'],
+      ['Warehouse Height',  val('warehouse_height')  ? val('warehouse_height')  + ' m'  : '—'],
+      ['Power Supply',      val('power_supply')      ? val('power_supply')      + ' kVA': '—'],
+      ['Truck Access',      document.getElementById('truck_access').checked    ? 'Yes' : 'No'],
+      ['Crane Installed',   document.getElementById('crane_installed').checked ? 'Yes' : 'No']
+    );
+  } else if (category === 'agricultural') {
+    detailItems.push(
+      ['Land Size',   val('land_size_ha')  ? val('land_size_ha')  + ' ha' : '—'],
+      ['Arable Land', val('arable_land')   ? val('arable_land')   + ' ha' : '—'],
+      ['Boreholes',   val('boreholes_count') || '—'],
+      ['Crop Types',  val('crop_types')      || '—']
+    );
+  }
+  setReview('review-details', detailItems);
+
+  // Location
+  setReview('review-location', [
+    ['Country',     val('country')        || '—'],
+    ['Province',    val('province')        || '—'],
+    ['City',        val('city')            || '—'],
+    ['Suburb',      val('suburb')          || '—'],
+    ['Address',     val('street_address')  || '—'],
+    ['Coordinates', val('latitude') && val('longitude')
+                    ? val('latitude') + ', ' + val('longitude')
+                    : 'Not set'],
+    ['Images',      uploadedFiles.length + ' uploaded'],
+  ]);
+
+  // Amenities
+  const checkedAmenities = Array.from(
+    document.querySelectorAll('.amenity-checkbox:checked')
+  ).map(function (cb) {
+    const label = cb.closest('.amenity-item').querySelector('.amenity-name').textContent;
+    const valEl = cb.closest('.amenity-item').querySelector('input[type="text"]');
+    return [label, valEl && valEl.value ? valEl.value : 'Yes'];
+  });
+  setReview('review-amenities',
+    checkedAmenities.length ? checkedAmenities : [['None selected', '—']]
+  );
+}
+
+function setReview(id, rows) {
+  const dl = document.getElementById(id);
+  dl.innerHTML = rows.map(function (row) {
+    return '<dt>' + row[0] + '</dt><dd>' + row[1] + '</dd>';
+  }).join('');
+}
+
+function cap(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
+// ══════════════════════════════════════════════════════════════
+//  §9  FORM SUBMIT
+// ══════════════════════════════════════════════════════════════
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!validateStep(1) || !validateStep(2) || !validateStep(3)) {
+    submitNoticeText.textContent = 'Some required fields are incomplete. Please review each step.';
+    submitNotice.hidden = false;
+    return;
+  }
+
+  // ── Replace this block with your actual fetch/AJAX call ──
+  const data = new FormData(form);
+  console.log('Submitting listing data:', Object.fromEntries(data));
+  alert('Listing submitted successfully! (Replace this with your API call.)');
+  // ────────────────────────────────────────────────────────
+});
+
+
+// ── Init ──────────────────────────────────────────────────────
+goToStep(1);
+
+})(); // end IIFE
+</script>
+
+</body>
+</html>
